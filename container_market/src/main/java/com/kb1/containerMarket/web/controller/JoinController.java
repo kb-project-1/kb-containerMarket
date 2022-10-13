@@ -15,8 +15,8 @@ public class JoinController {
         return "member/login";
     }
 
-    @GetMapping("/account/register")
-    public String register() {
-        return "member/join";
-    }
+//    @GetMapping("/account/register")
+//    public String register() {
+//        return "member/join";
+//    }
 }

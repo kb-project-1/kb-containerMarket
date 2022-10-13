@@ -1,10 +1,10 @@
-package com.kb1.container_market.controller;
+package com.kb1.containerMarket.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller("/")
-public class MainController {
+@Controller
+public class IndexController {
 
     @GetMapping
     public String main() {

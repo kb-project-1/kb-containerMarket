@@ -1,4 +1,4 @@
-package com.kb1.container_market;
+package com.kb1.containerMarket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -12,8 +12,9 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" href="static/css/reset.css">
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/order.css">
     
 </head>
 <body>
@@ -21,7 +22,7 @@
         <header id="header">
             <div class="header-top">
                 <div class="logo">
-                    <a href="#"><img src="static/images/site_logo.jpg" alt="logo" srcset=""></a>
+                    <a href="#"><img src="/static/images/site_logo.jpg" alt="logo" srcset=""></a>
                 </div>
                 <div class="customer-menu">
                     <ul>
@@ -36,7 +37,11 @@
             </div>
         </header>
         <main id="main">
-            <nav class="side-bar">
+            <nav class="side_bar">
+                <div class="order">
+                    <div class="title">나의 주문 처리 현황</div>
+                    <div class="state"></div>
+                </div>
                 <div class="nav-01">
                     <ul>
                         <li><a href="#">NEW 5%</a></li>
@@ -62,14 +67,14 @@
                         <li><a href="https://www.facebook.com/containermarket.co.kr" target="_blank"><i class="fa-brands fa-facebook-f"></i><span>FACEBOOK</span></a></li>
                     </ul>
                 </div>
-                <div class="kakao_btn"><a href="#none" onclick="popWin=window.open('https://pf.kakao.com/_UnGss','windows','width=600,height=670,scrollbars=yes'); popWin.focus(); return false;" class="kakao"><img src="/images/kakao_btn.png"></a></div>
+                <div class="kakao_btn"><a href="#none" onclick="popWin=window.open('https://pf.kakao.com/_UnGss','windows','width=600,height=670,scrollbars=yes'); popWin.focus(); return false;" class="kakao"><img src="/static/images/kakao_btn.png"></a></div>
                 
                 
                 
             </nav>
-
+            
         </main>
-        <footer></footer>
+        
         
 
     </div>

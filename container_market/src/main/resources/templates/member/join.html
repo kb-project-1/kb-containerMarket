@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" href="/static/css/reset.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/memberJoin.css">
+</head>
+<body>
+<div id="container">
+  <header id="header">
+    <div class="header-top">
+      <div class="logo">
+        <a href="/"><img src="/static/images/site_logo.jpg" alt="logo" srcset=""></a>
+      </div>
+      <div class="customer-menu">
+        <ul>
+          <li><a href="/member/login">LOGIN</a></li>
+          <li><a href="/member/join">JOIN</a></li>
+          <li><a href="#">CART - 0</a></li>
+          <li><a href="#">ORDER</a></li>
+          <li><a href="#">MYSHOP</a></li>
+          <li class="search"><a href="#"><i class="fa-solid fa-search"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <nav class="side-bar">
+      <div class="nav-01">
+        <ul>
+          <li><a href="#">NEW 5%</a></li>
+          <li><a href="#">SET UP</a></li>
+          <li><a href="#">OUTER</a></li>
+          <li><a href="#">TOP</a></li>
+          <li><a href="#">SHIRT</a></li>
+          <li><a href="#">BOTTOMS</a></li>
+          <li><a href="#">SHOES</a></li>
+          <li><a href="#">ACC</a></li>
+        </ul>
+      </div>
+      <div class="nav-02">
+        <ul>
+          <li><a href="#">NOTICE</a></li>
+          <li><a href="#">Q & A</a></li>
+          <li><a href="#">REVIEW</a></li>
+        </ul>
+      </div>
+      <div class="sns-btn">
+        <ul>
+          <li><a href="https://instagram.com/connmk" target="_blank"><i
+                  class="fa-brands fa-instagram"></i><span>INSTAGRAM</span></a></li>
+          <li><a href="https://www.facebook.com/containermarket.co.kr" target="_blank"><i
+                  class="fa-brands fa-facebook-f"></i><span>FACEBOOK</span></a></li>
+        </ul>
+      </div>
+      <div class="kakao_btn"><a href="#none"
+                                onclick="popWin=window.open('https://pf.kakao.com/_UnGss','windows','width=600,height=670,scrollbars=yes'); popWin.focus(); return false;"
+                                class="kakao"><img src="/static/images/kakao_btn.png"></a></div>
+    </nav>
+    <div id="content">
+      <div class="titleArea">
+        <h2>JOIN</h2>
+      </div>
+      <form id="joinForm" method="post">
+        <h3>기본 정보</h3>
+        <div class="ec-base-table typeWrite">
+          <table border="1" summary>
+            <tbody>
+            <tr>
+              <th scope="row">아이디
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <input id="member_id" name="member_id" type="text">
+                (영문소문자/숫자, 4~16자)
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">비밀번호
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <div class="eTolltip">
+                  <input id="passwd" name="passwd" maxlength="16" type="password">
+                  (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">비밀번호 확인
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input id="user_passwd_confirm" name="user_passwd_confirm" maxlength="16"
+                         type="password">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" id="nameTitle">이름
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input type="text" name="name" id="name" maxlength="20"></td>
+            </tr>
+            <tr>
+              <th scope="row">휴대전화
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <select id="mobile1" name="mobile[]">
+                  <option value="010">010</option>
+                  <option value="010">011</option>
+                  <option value="010">016</option>
+                  <option value="010">017</option>
+                  <option value="010">018</option>
+                  <option value="010">019</option>
+                </select>
+                -
+                <input id="mobile2" name="mobile[]" maxlength="4" type="text">
+                -
+                <input id="mobile3" name="mobile[]" maxlength="4" type="text">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">이메일
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input id="email1" name="email1" type="text"></td>
+            </tr>
+          </table>
+          </tbody>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none" class="btnSubmit" onclick="memberJoinAction()">회원가입</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+
+
+</div>
+</body>
+</html>

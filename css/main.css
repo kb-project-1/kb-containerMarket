@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/*상단*/
+#header {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-top: 10px solid #242424;
+}
+
+.header-top {
+    width: 75%;
+    height: 78px;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+}
+
+.header-top .logo {
+    width: 100px;
+    text-align: left;
+    position: absolute;
+    top: 12px;
+    left: 0;
+}
+
+.customer-menu {
+    width: 500px;
+    height: 45px;
+    margin: 70px auto;
+    padding: 0 0 0 70px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.customer-menu li{
+    float: left;
+    margin-left: 46px;
+    color: #000;
+    font-size: 12px;
+}
+
+.customer-menu .search {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    margin: 0;
+    color: #000;
+    font-size: 20px;
+}
+
+.customer-menu li > a:hover{
+    color:#c5c5c5
+}
+
+.customer-menu li:last-child > a:hover{
+    color:#000
+}
+
+/*네비게이션*/
+#main{
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.side-bar {
+    position: fixed;
+    width: 200px;
+}
+
+.nav-01 {
+    margin: 40px 0;
+    padding: 0;
+}
+
+.nav-02 {
+    margin: 0 0 40px 0;
+    padding: 0;
+}
+
+.nav-01 > ul > li > a ,
+.nav-02 > ul > li > a ,
+.sns-btn > ul > li > a {
+    display: block;
+    margin: 0px 20px 5px 0px;
+    color: #000;
+    line-height: 20px;
+    font-size: 11px;
+    font-weight: 400;
+    word-spacing: -1px;
+    text-decoration: none;
+}
+
+.sns-btn {
+    width: 260px;
+    margin: 0px 0 30px;
+    padding: 0;
+}
+
+.sns-btn i{
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+.sns-btn i:hover{
+    color: #c5c5c5;
+}
+
+.kakao_btn {
+    height: 54px;
+    position: relative;
+}
+
+.kakao_btn > a img {
+    height: 45px;
+    position: absolute;
+    left: -5px;
+}
+
+.nav-01 > ul > li > a:hover ,
+.nav-02 > ul > li > a:hover ,
+.sns-btn > ul > li > a:hover {
+    color: #c5c5c5;
+}

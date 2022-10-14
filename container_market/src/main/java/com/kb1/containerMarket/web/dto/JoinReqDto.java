@@ -39,8 +39,6 @@ public class JoinReqDto {
     private String password;
     @NotBlank(message = "휴대폰 번호는 비워둘 수 없습니다.")
     private String phoneNumber;
-    @NotBlank(message = "생일은 비워둘 수 없습니다.")
-    private LocalDate birthDay;
 
 
     public Member toEntity() {
@@ -50,7 +48,6 @@ public class JoinReqDto {
                 .name(name)
                 .username(username)
                 .phone_number(phoneNumber)
-                .birthDay(birthDay)
                 .role_id(1)
                 .build();
     }

@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService{
     public void register(JoinReqDto joinReqDto) throws Exception {
         // 회원가입 진행
         Member user = joinReqDto.toEntity();
-        int result = memberRepository.saveUser(user);
+        int result = memberRepository.saveMember(user);
         if(result == 0) {
             throw new CustomInternalServerErrorException("회원가입 중 문제가 발생하였습니다.");
         }

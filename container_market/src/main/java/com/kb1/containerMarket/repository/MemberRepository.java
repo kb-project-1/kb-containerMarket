@@ -7,5 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberRepository {
 
     public Member findMemberByUsername(String username) throws Exception;
-    public int saveUser(Member member) throws Exception;
+    public int saveMember(Member member) throws Exception;
 }

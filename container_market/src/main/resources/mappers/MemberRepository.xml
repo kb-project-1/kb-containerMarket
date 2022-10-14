@@ -19,7 +19,6 @@
         <result property="phone_number" column="phone_number"/>
         <result property="email" column="email"/>
         <result property="provider" column="provider"/>
-        <result property="birthDay" column="birthday"/>
         <result property="role_id" column="role_id"/>
         <result property="create_date" column="create_date"/>
         <result property="update_date" column="update_date"/>
@@ -34,7 +33,6 @@
         um.name,
         um.phone_number,
         um.email,
-        um.birthday,
         um.provider,
         um.role_id,
         rm.name as role_name,
@@ -57,7 +55,6 @@
         #{name},
         #{phone_number},
         #{email},
-        #{birthday},
         #{provider},
         #{role_id},
         now(),

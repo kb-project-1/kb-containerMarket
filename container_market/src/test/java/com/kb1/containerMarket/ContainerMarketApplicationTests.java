@@ -1,4 +1,4 @@
-package com.kb1.container_market;
+package com.kb1.containerMarket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

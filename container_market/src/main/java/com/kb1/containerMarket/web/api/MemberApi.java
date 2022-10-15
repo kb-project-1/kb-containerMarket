@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.URI;
 
 @RestController
-@RequestMapping("api/member")
+@RequestMapping("/api/member")
 @RequiredArgsConstructor
 public class MemberApi {
 

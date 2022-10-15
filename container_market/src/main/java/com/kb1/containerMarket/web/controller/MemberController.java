@@ -4,19 +4,21 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@RequestMapping("/member")
 @Controller
-public class JoinController {
+public class MemberController {
 
-    @GetMapping("/account/login")
+    @GetMapping("/login")
     public String login(Model model, @RequestParam @Nullable String username) {
         model.addAttribute("username", username == null ? "" : username);
-        return "member/login";
+        return "/member/login";
     }
 
-//    @GetMapping("/account/register")
-//    public String register() {
-//        return "member/join";
-//    }
+    @GetMapping("/join")
+    public String join() {
+        return "/member/join";
+    }
 }

@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MemberController {
 
     @GetMapping("/login")
-    public String login(Model model, @RequestParam @Nullable String username) {
+    public String login(Model model,
+                        @RequestParam @Nullable String username,
+                        @RequestParam @Nullable String error) {
         model.addAttribute("username", username == null ? "" : username);
+        model.addAttribute("error", error == null? "" : error);
         return "/member/login";
     }
 

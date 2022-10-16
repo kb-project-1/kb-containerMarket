@@ -4,7 +4,6 @@
 <head th:replace="/fragments/head :: head"/>
 <head>
   <link rel="stylesheet" href="/static/css/login.css">
-  <link rel="stylesheet" href="/static/css/error.css">
 </head>
 <body>
 <div id="container">
@@ -17,20 +16,6 @@
         <h2 class="login-subtitle">LOGIN</h2>
       </div>
       <div class="login-area">
-        <th:block th:if="${error == 'auth'}">
-          <div class="errors">
-            <ul>
-              <li>이메일 또는 비밀번호가 잘못되었습니다.</li>
-            </ul>
-          </div>
-        </th:block>
-        <th:block th:if="${error == 'passwordExpired'}">
-          <div class="errors">
-            <ul>
-              <li>비밀번호 인증 5회 초과.</li>
-            </ul>
-          </div>
-        </th:block>
         <section class="login-current">
           <form action="/member/login" method="post">
             <div class="login-left">
@@ -54,8 +39,16 @@
     </div>
   </main>
   <footer></footer>
-
-
 </div>
+<th:block th:if="${error == 'auth'}">
+  <script>
+      alert("이메일 또는 비밀번호가 잘못되었습니다")
+   </script>
+</th:block>
+<th:block th:if="${error == 'passwordExpired'}">
+  <script>
+      alert("비밀번호 5회 초과")
+   </script>
+</th:block>
 </body>
 </html>

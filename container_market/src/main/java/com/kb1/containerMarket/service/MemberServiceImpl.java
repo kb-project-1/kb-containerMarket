@@ -18,8 +18,8 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
 
     @Override
-    public void duplicate(JoinReqDto joinReqDto) throws Exception{
-        Member member = memberRepository.findMemberByUsername(joinReqDto.getUsername());
+    public void duplicate(String username) throws Exception{
+        Member member = memberRepository.findMemberByUsername(username);
 
         if(member != null) {
             Map<String, String> errorMap = new HashMap<String, String>();

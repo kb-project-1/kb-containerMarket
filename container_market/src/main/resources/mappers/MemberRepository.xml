@@ -16,7 +16,7 @@
         <result property="username" column="username"/>
         <result property="password" column="password"/>
         <result property="name" column="name"/>
-        <result property="phone_number" column="phone_number"/>
+        <result property="phone" column="phone"/>
         <result property="email" column="email"/>
         <result property="provider" column="provider"/>
         <result property="role_id" column="role_id"/>
@@ -27,33 +27,33 @@
 
     <select id="findMemberByUsername" parameterType="String" resultMap="member">
         select
-        um.id,
-        um.username,
-        um.password,
-        um.name,
-        um.phone_number,
-        um.email,
-        um.provider,
-        um.role_id,
-        rm.name as role_name,
-        um.create_date,
-        um.update_date,
+            mm.id,
+            mm.username,
+            mm.password,
+            mm.name,
+            mm.phone,
+            mm.email,
+            mm.provider,
+            mm.role_id,
+            rm.name as role_name,
+            mm.create_date,
+            mm.update_date
         from
-        user_mst um
-        left outer join role_mst rm on(rm.id = um.role_id)
+            member_mst mm
+            left outer join role_mst rm on(rm.id = mm.role_id)
         where
-        um.email = #{email}
+            mm.username = #{username}
     </select>
 
     <insert id="saveMember" parameterType="com.kb1.containerMarket.web.domain.Member">
         insert into
-        user_mst
+        member_mst
         values(
         0,
         #{username},
         #{password},
         #{name},
-        #{phone_number},
+        #{phone},
         #{email},
         #{provider},
         #{role_id},

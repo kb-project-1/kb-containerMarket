@@ -30,4 +30,5 @@ public class MemberApi {
 
         return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>(1,"회원가입 성공", joinReqDto.getUsername()));
     }
+
 }

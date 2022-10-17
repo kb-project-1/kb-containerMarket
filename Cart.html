@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨테이너마켓</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/Cart.css">
+    
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="#"><img src="/images/site_logo.jpg" alt="logo" srcset=""></a>
+                </div>
+                <div class="customer-menu">
+                    <ul>
+                        <li><a href="#">LOGIN</a></li>
+                        <li><a href="#">JOIN</a></li>
+                        <li><a href="#">CART - 0</a></li>
+                        <li><a href="#">ORDER</a></li>
+                        <li><a href="#">MYSHOP</a></li>
+                        <li class="search"><a href="#"><i class="fa-solid fa-search"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main id="main">
+            <nav class="side-bar">
+                <div class="nav-01">
+                    <ul>
+                        <li><a href="#">NEW 5%</a></li>
+                        <li><a href="#">SET UP</a></li>
+                        <li><a href="#">OUTER</a></li>
+                        <li><a href="#">TOP</a></li>
+                        <li><a href="#">SHIRT</a></li>
+                        <li><a href="#">BOTTOMS</a></li>
+                        <li><a href="#">SHOES</a></li>
+                        <li><a href="#">ACC</a></li>
+                    </ul>
+                </div>
+                <div class="nav-02">
+                    <ul>
+                        <li><a href="#">NOTICE</a></li>
+                        <li><a href="#">Q & A</a></li>
+                        <li><a href="#">REVIEW</a></li>
+                    </ul>
+                </div>
+                <div class="sns-btn">
+                    <ul>
+                        <li><a href="https://instagram.com/connmk" target="_blank"><i class="fa-brands fa-instagram"></i><span>INSTAGRAM</span></a></li>
+                        <li><a href="https://www.facebook.com/containermarket.co.kr" target="_blank"><i class="fa-brands fa-facebook-f"></i><span>FACEBOOK</span></a></li>
+                    </ul>
+                </div>
+                <div class="kakao_btn"><a href="#none" onclick="popWin=window.open('https://pf.kakao.com/_UnGss','windows','width=600,height=670,scrollbars=yes'); popWin.focus(); return false;" class="kakao"><img src="/images/kakao_btn.png"></a></div>
+                
+                
+            </nav>
+
+            <div id="contents">
+                <div class="title-area">
+                    <h2 class="cart-subtitle">CART</h2>
+                </div>
+                <body>
+                    <section class="cart">                       
+                        <table class="cart__list">
+                            <form>
+                                <thead>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td colspan="2">상품정보</td>
+                                        <td>옵션</td>
+                                        <td>상품금액</td>
+                                        <td>배송비</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="cart__list__detail">
+                                        <td><input type="checkbox"></td>
+                                        <td><img src="/images/Top.jpg" alt="후드티"></td>
+                                        <td><a href="#">후드티</a>
+                                            <p>옵션 : 그레이 / L </p>
+                                            <span class="price">116,620원</span>                                         
+                                        </td>
+                                        <td class="cart__list__option">
+                                            <p>수량 : 1</p>  
+                                            <button class="cart__list__optionbtn">변경</button>                                          
+                                        </td>
+                                        <td><span class="price">116,620원</span><br>
+                                        </td>
+                                        <td>무료</td>
+                                    </tr>
+                                    <tr class="cart__list__detail">
+                                        <td style="width: 2%;"><input type="checkbox"></td>
+                                        <td style="width: 13%;">
+                                            <img src="images/pants.jpg" alt="바지">
+                                        </td>
+                                        <td><a href="#">바지</a>
+                                            <p>옵션 : 그레이 / L </p>
+                                            <span class="price">88,900원</span>
+                                        </td>
+                                        <td class="cart__list__option" style="width: 27%;">
+                                            <p>수량 : 1</p>
+                                            <button class="cart__list__optionbtn">변경</button>
+                                        </td>
+                                        <td style="width: 15%;"><span class="price">88,900원</span><br>
+                                        </td>
+                                        <td style="width: 15%;">무료</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3"><input type="checkbox"> <button class="cart__list__optionbtn">선택상품 삭제</button>
+                                            <button class="cart__list__optionbtn">선택상품 찜</button>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </form>
+                        </table>
+                        <div class="cart__mainbtns">
+                            <button class="cart__bigorderbtn left">전체상품주문</button>
+                            <button class="cart__bigorderbtn right">선택상품주문</button>
+                        </div>
+                    </section>
+                </body>
+            </div>
+        </main>
+        
+        <footer></footer>
+        
+
+    </div>
+</body>
+</html>

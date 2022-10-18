@@ -4,6 +4,7 @@ const RegisterEventService = {
     getPriceInputObj: () => document.querySelectorAll(".product-inputs")[2],
     getRegistInfo: () => document.querySelector(".regist-info"),
     getRegistButtonObj: () => document.querySelector(".regist-button"),
+    getInfoTextareaObjs: () => document.querySelectorAll(".product-inputs"),
 
     init: function () {
         this.getNameInputObj().disabled = true;
@@ -21,7 +22,7 @@ const RegisterEventService = {
             RegisterObj.category = this.getCategorySelectObj().value;
         }
     },
-
+    
     addNameInputEvent: function() {
         this.getNameInputObj().onkeyup = () => {
             if(this.getCategorySelectObj().value != "none") {
@@ -48,16 +49,51 @@ const RegisterEventService = {
 
     addRegistButtonEvent: function() {
         this.getRegistButtonObj().onclick = () => {
+            console.log(this.getInfoTextareaObjs())
+            RegisterObj.simpleInfo = this.getInfoTextareaObjs()[3].value;
+            RegisterObj.detailInfo = this.getInfoTextareaObjs()[4].value;
+            
             console.log(RegisterObj);
-        }
-    },
 
+            RegisterReuqestService.createProductRequest();
+        }
+    }
+
+}
+
+const RegisterReuqestService = {
+    createProductRequest: () => {
+        let responseResult = null
+        
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/api/admin/product",
+            contentType: "application/json",
+            date: JSON.stringify(RegisterObj),
+            dataType: "json",
+            success: (response) => {
+                responseResult = response.data;
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        });
+
+        return responseResult;
+
+    }
 }
 
 const RegisterObj = {
     category: null,
     name: null,
-    price: null
+    price: null,
+    simpleInfo: null,
+    detailInfo: null,
+    optionInfo: null,
+    managementInfo: null,
+    shippingInfo: null 
 }
 
 const ProductRegistration = {

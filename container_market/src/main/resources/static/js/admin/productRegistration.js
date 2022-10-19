@@ -138,8 +138,7 @@ class RegisterEventService {
             const detailInfo = this.#infoTextareaObjs[4].value;
 
             const productMst = new ProductMst(
-                category, name, price, simpleInfo, detailInfo,
-                optionInfo, managementInfo, shippingInfo);
+                category, name, price, simpleInfo, detailInfo);
 
             const registerApi = new RegisterApi();
             registerApi.createProductRequest(productMst.getObject());

@@ -1,3 +1,4 @@
+@charset "utf-8";
 #contents{
     width: 80%;
     float: right;
@@ -40,7 +41,7 @@ colgroup {
 }
 col {
     display: table-column;
-    
+
 }
 thead {
     display: table-header-group;
@@ -101,15 +102,7 @@ p {
     color: #757575;
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
+/* 버튼css */
 .btn{
     margin: 30px 0;
     text-align: center;
@@ -146,4 +139,22 @@ p {
     padding-bottom: 9px;
     border-bottom: 0px solid #495164;
     color: #495164;
+}
+
+/* 주문이후css */
+
+.ec-base-table .center {
+    text-align: center;
+}
+.displaynone {
+    display: none;
+}
+.displaynone {
+    display: none !important;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
 }

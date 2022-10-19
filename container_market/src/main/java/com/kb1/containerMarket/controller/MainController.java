@@ -22,8 +22,8 @@ public class MainController {
     public String myShopIndex() {
         return "/myShop/index";
     }
-    @GetMapping("/myShop/order")
+    @GetMapping("/myShop/order/list")
     public String myShopOrder() {
-        return "/myShop/order";
+        return "/myShop/order/list";
     }
 }

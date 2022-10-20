@@ -19,4 +19,19 @@
         from
             pdt_category_mst
     </select>
+
+    <insert id="saveProductMst" parameterType="com.kb1.containerMarket.web.domain.Product">
+        insert into
+        product_mst
+        values(
+        0,
+        #{pdt_name},
+        #{category_id},
+        #{pdt_price},
+        #{pdt_simple_info},
+        #{pdt_detail_info},
+        now(),
+        now()
+        )
+    </insert>
 </mapper>

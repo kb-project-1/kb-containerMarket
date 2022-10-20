@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<head th:replace="/fragments/head :: head" />
+<head>
+  <link rel="stylesheet" href="/static/css/memberJoin.css">
+</head>
+<body>
+<div id="container">
+  <header th:replace="/fragments/header :: header"/>
+  <main id="main">
+    <nav th:replace="/fragments/nav :: nav"/>
+    <div id="content">
+      <div class="titleArea">
+        <h2>JOIN</h2>
+      </div>
+      <form id="joinForm" method="post">
+        <h3>기본 정보</h3>
+        <div class="ec-base-table typeWrite">
+          <table border="1" summary>
+            <tbody>
+            <tr>
+              <th scope="row">아이디
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <input id="member_id" name="member_id" type="text">
+                (영문소문자/숫자, 4~16자)
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">비밀번호
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <div class="eTolltip">
+                  <input id="passwd" name="passwd" maxlength="16" type="password">
+                  (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">비밀번호 확인
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input id="user_passwd_confirm" name="user_passwd_confirm" maxlength="16"
+                         type="password">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row" id="nameTitle">이름
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input type="text" name="name" id="name" maxlength="20"></td>
+            </tr>
+            <tr>
+              <th scope="row">휴대전화
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td>
+                <select id="mobile1" name="mobile[]">
+                  <option value="010">010</option>
+                  <option value="010">011</option>
+                  <option value="010">016</option>
+                  <option value="010">017</option>
+                  <option value="010">018</option>
+                  <option value="010">019</option>
+                </select>
+                -
+                <input id="mobile2" name="mobile[]" maxlength="4" type="text">
+                -
+                <input id="mobile3" name="mobile[]" maxlength="4" type="text">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">이메일
+                <img src="http://img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
+              </th>
+              <td><input id="email1" name="email1" type="text"></td>
+            </tr>
+          </table>
+          </tbody>
+        </div>
+        <div class="ec-base-button">
+          <a href="#none" class="btnSubmit" onclick="memberJoinAction()">회원가입</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+
+
+</div>
+</body>
+</html>

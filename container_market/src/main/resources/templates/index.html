@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,5 +75,15 @@
         
 
     </div>
+=======
+<head th:replace="/fragments/head :: head" />
+<body>
+<div id="container">
+    <header th:replace="/fragments/header :: header"/>
+    <main id="main">
+        <nav th:replace="/fragments/nav :: nav"/>
+    </main>
+</div>
+>>>>>>> 1c0ecf2ec3c582a9d676102bff6509e1eeedcd65
 </body>
 </html>

@@ -4,22 +4,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//테스트용
+@RequestMapping("/member")
 @Controller
 public class MainController {
 
-    @GetMapping("/member/login")
+    @GetMapping("/login")
     public String login() {
         return "/member/login";
     }
 
-    @GetMapping("/member/join")
+    @GetMapping("/join")
     public String join() {
         return "/member/join";
-    }
-
-    @GetMapping("/myShop/index")
-    public String myShopIndex() {
-        return "/myShop/index";
     }
 }

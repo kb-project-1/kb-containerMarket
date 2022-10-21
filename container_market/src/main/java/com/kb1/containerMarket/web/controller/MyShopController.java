@@ -12,4 +12,9 @@ public class MyShopController {
     public String myShopIndex() {
         return "/myShop/index";
     }
+
+    @GetMapping("/order/list")
+    public String myShopOrder() {
+        return "/myShop/order/list";
+    }
 }

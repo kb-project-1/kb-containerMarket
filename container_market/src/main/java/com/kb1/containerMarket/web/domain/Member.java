@@ -18,7 +18,7 @@ public class Member {
     private String email;
     private String password;
     private String name;
-    private String phone_number;
+    private String phone;
     private String provider;
     private int role_id;
     private LocalDate birthDay;

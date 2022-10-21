@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/1조-컨테이너마켓.iml" filepath="$PROJECT_DIR$/.idea/1조-컨테이너마켓.iml" />
       <module fileurl="file://$PROJECT_DIR$/container_market/container_market.iml" filepath="$PROJECT_DIR$/container_market/container_market.iml" />
+      <module fileurl="file://$PROJECT_DIR$/container_market/stussy-clone-20220930-dohyun.iml" filepath="$PROJECT_DIR$/container_market/stussy-clone-20220930-dohyun.iml" />
     </modules>
   </component>
 </project>

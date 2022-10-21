@@ -17,33 +17,28 @@ import java.util.Map;
 @Component
 public class ValidationAop {
 
-    @Pointcut("execution(* com.kb1.containerMarket..*Api.*(..))")
-    private void executionPointCut() {}
+    @Pointcut("@annotation(com.kb1.containerMarket.aop.annotation.ValidAspect)")
+    private void annotationPointCut() {}
 
-    @Around("executionPointCut()")
+    @Around("annotationPointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 
         BeanPropertyBindingResult bindingResult = searchBindingResult(joinPoint);
 
-        searchError(bindingResult);
-        //joinPoint 원래 내가 실행해야하는 메소드
-        Object result = null;
-        result = joinPoint.proceed();
-
-        return result;
+        if(bindingResult.hasErrors()){
+            Map<String, String> errorMap = errorBinding(bindingResult);
+            throw new CustomValidationException("VALIDATION_ERR", errorMap);
+        }
+        return joinPoint.proceed();
     }
 
-    private static void searchError(BeanPropertyBindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            Map<String, String> errorMap = new HashMap<>();
+    private static Map<String, String> errorBinding(BeanPropertyBindingResult bindingResult) {
+        Map<String, String> errorMap = new HashMap<String, String>();
 
-            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            for (FieldError fieldError : fieldErrors) {
-                errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());
-            }
-
-            throw new CustomValidationException("Validation Error", errorMap);
-        }
+        bindingResult.getFieldErrors().forEach(error -> {
+            errorMap.put("errMsg", error.getDefaultMessage());
+        });
+        return errorMap;
     }
 
     private static BeanPropertyBindingResult searchBindingResult(ProceedingJoinPoint joinPoint) {

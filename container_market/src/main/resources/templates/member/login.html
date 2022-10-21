@@ -17,16 +17,16 @@
       </div>
       <div class="login-area">
         <section class="login-current">
-          <form action="" method="">
+          <form action="/member/login" method="post">
             <div class="login-left">
-              <input type="email" class="login-input" name="username" placeholder="아이디">
+              <input type="text" class="login-input" name="username" th:value="${username}"placeholder="아이디">
               <input type="password" class="login-input" name="password" placeholder="비밀번호">
             </div>
             <button type="submit" class="btn login-button">로그인</button>
 
           </form>
           <p class="security">
-            <img src="/static/images/ico_access.gif" alt="보안접속"> 보안접속             </p>
+            <img src="/static/images/ico_access.gif" alt="보안접속"> 보안접속 </p>
           <div class="link-area">
             <ul>
               <li><a class="login-search" href="#">아이디찾기</a></li>
@@ -39,8 +39,16 @@
     </div>
   </main>
   <footer></footer>
-
-
 </div>
+<th:block th:if="${error == 'auth'}">
+  <script>
+      alert("이메일 또는 비밀번호가 잘못되었습니다")
+   </script>
+</th:block>
+<th:block th:if="${error == 'passwordExpired'}">
+  <script>
+      alert("비밀번호 5회 초과")
+   </script>
+</th:block>
 </body>
 </html>

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.URI;
 
 @RestController
-@RequestMapping("api/member")
+@RequestMapping("/api/member")
 @RequiredArgsConstructor
 public class MemberApi {
 
@@ -25,9 +25,10 @@ public class MemberApi {
     @PostMapping("/join")
     public ResponseEntity<?> join(@Validated(ValidationSequence.class) @RequestBody JoinReqDto joinReqDto, BindingResult bindingResult) throws Exception {
 
-        memberService.duplicate(joinReqDto);
+        memberService.duplicate(joinReqDto.getUsername());
         memberService.register(joinReqDto);
 
         return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>(1,"회원가입 성공", joinReqDto.getUsername()));
     }
+
 }

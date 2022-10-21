@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kb1.containerMarket.repository.admin.ProductManagementRepository">
+    <resultMap id="product_category" type="com.kb1.containerMarket.web.domain.ProductCategory">
+        <result property="category_id" column="id"/>
+        <result property="group_id" column="group_id"/>
+        <result property="category_name" column="category_name"/>
+    </resultMap>
+
+
+    <select id="getCategoryList" resultMap="product_category">
+        select
+            id,
+            group_id,
+            category_name
+        from
+            pdt_category_mst
+    </select>
+
+    <insert id="saveProductMst" parameterType="com.kb1.containerMarket.web.domain.Product">
+        insert into
+        product_mst
+        values(
+        0,
+        #{pdt_name},
+        #{category_id},
+        #{pdt_price},
+        #{pdt_simple_info},
+        #{pdt_detail_info},
+        now(),
+        now()
+        )
+    </insert>
+</mapper>

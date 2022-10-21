@@ -14,7 +14,6 @@
     <select id="getCategoryList" resultMap="product_category">
         select
             id,
-            group_id,
             category_name
         from
             pdt_category_mst

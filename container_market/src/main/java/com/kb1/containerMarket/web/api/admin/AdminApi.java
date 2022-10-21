@@ -11,12 +11,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/admin")
-public class ProductAdminApi {
+public class AdminApi {
 
     private final ProductManagementService productManagementService;
 

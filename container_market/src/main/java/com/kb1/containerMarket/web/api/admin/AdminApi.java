@@ -32,4 +32,10 @@ public class AdminApi {
     public ResponseEntity<?> getCategoryList() throws Exception {
         return ResponseEntity.ok().body(new CMRespDto<>(1, "Get successfully", productManagementService.getCategoryList()));
     }
+
+    @LogAspect
+    @GetMapping("/products")
+    public ResponseEntity<?> getProducts(int page) throws Exception {
+        return ResponseEntity.ok().body(new CMRespDto<>(1, "Get successfully", productManagementService.getProducts(page)));
+    }
 }

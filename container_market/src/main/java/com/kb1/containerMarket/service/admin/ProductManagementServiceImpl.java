@@ -3,6 +3,8 @@ package com.kb1.containerMarket.service.admin;
 import com.kb1.containerMarket.exception.CustomInternalServerErrorException;
 import com.kb1.containerMarket.repository.admin.ProductManagementRepository;
 import com.kb1.containerMarket.web.domain.ProductCategory;
+import com.kb1.containerMarket.web.domain.admin.AdminProduct;
+import com.kb1.containerMarket.web.dto.admin.AdminProductResponseDto;
 import com.kb1.containerMarket.web.dto.admin.CategoryResponseDto;
 import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +33,12 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
         if(productManagementRepository.saveProductMst(productRegisterReqDto.toEntity())==0) {
             throw new CustomInternalServerErrorException("상품 등록 실패");
         }
+    }
+
+    @Override
+    public List<AdminProductResponseDto> getProducts(int page) throws Exception {
+        List<AdminProduct> products = productManagementRepository.getProducts(page);
+        List<AdminProductResponseDto> productResponseDtos = products.stream().map(AdminProduct::toDto).collect(Collectors.toList());
+        return productResponseDtos;
     }
 }

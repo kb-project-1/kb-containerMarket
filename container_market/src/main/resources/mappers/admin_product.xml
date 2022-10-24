@@ -33,4 +33,20 @@
         now()
         )
     </insert>
+
+    <select id="getProducts" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.AdminProduct">
+        select
+            pm.id,
+            pm.pdt_name,
+            pm.pdt_price,
+            pcm.category_name,
+            pm_cnt.product_total_count
+        from
+            pdt_mst pm
+            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+            left outer join (   select count(*) product_total_count
+                                from pdt_mst
+                                 ) pm_cnt on (1=1)
+        limit #{page}, 10
+    </select>
 </mapper>

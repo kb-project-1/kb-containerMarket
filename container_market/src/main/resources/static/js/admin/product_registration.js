@@ -76,7 +76,7 @@ class RegisterApi {
                 responseResult = response.data;
             },
             error: (error) => {
-                console.log(error);
+                alert("상품등록 실패");
             }
         });
 

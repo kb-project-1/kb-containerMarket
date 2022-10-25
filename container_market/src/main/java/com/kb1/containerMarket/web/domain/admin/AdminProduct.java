@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class AdminProduct {
     private int id;
-    private int category;
+    private String category_name;
     private String pdt_name;
     private int pdt_price;
     private int product_total_count;
@@ -19,7 +19,7 @@ public class AdminProduct {
     public AdminProductResponseDto toDto() {
         return AdminProductResponseDto.builder()
                 .productId(id)
-                .category(category)
+                .categoryName(category_name)
                 .productName(pdt_name)
                 .productPrice(pdt_price)
                 .productTotalCount(product_total_count)

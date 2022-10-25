@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class AdminProductResponseDto {
     private int productId;
-    private int category;
+    private String categoryName;
     private String productName;
     private int productPrice;
     private int productTotalCount;

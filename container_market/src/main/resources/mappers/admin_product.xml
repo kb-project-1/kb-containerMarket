@@ -21,7 +21,7 @@
 
     <insert id="saveProductMst" parameterType="com.kb1.containerMarket.web.domain.Product">
         insert into
-        product_mst
+        pdt_mst
         values(
         0,
         #{pdt_name},
@@ -43,7 +43,7 @@
             pm_cnt.product_total_count
         from
             pdt_mst pm
-            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+            left outer join pdt_category_mst pcm on (pcm.id = pm.category_id)
             left outer join (   select count(*) product_total_count
                                 from pdt_mst
                                  ) pm_cnt on (1=1)

@@ -36,17 +36,17 @@ public class AdminApi {
         }
         productManagementService.registerMst(productRegisterReqDto);
         return ResponseEntity.created(null)
-                .body(new CMRespDto<>(1,"Register Successfully",true));
+                .body(new CMRespDto<>("Register Successfully",true));
     }
 
     @GetMapping("/product/category")
     public ResponseEntity<?> getCategoryList() throws Exception {
-        return ResponseEntity.ok().body(new CMRespDto<>(1, "Get successfully", productManagementService.getCategoryList()));
+        return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getCategoryList()));
     }
 
     @LogAspect
     @GetMapping("/products")
     public ResponseEntity<?> getProducts(int page) throws Exception {
-        return ResponseEntity.ok().body(new CMRespDto<>(1, "Get successfully", productManagementService.getProducts(page)));
+        return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getProducts(page)));
     }
 }

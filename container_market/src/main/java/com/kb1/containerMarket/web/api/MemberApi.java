@@ -28,7 +28,7 @@ public class MemberApi {
         memberService.duplicate(joinReqDto.getUsername());
         memberService.register(joinReqDto);
 
-        return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>(1,"회원가입 성공", joinReqDto.getUsername()));
+        return ResponseEntity.created(URI.create("/member/login")).body(new CMRespDto<>("회원가입 성공", joinReqDto.getUsername()));
     }
 
 }

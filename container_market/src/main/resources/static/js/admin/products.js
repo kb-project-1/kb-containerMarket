@@ -54,7 +54,7 @@ class PageHandler {
         const startIndex = this.#page % 10 ==0 ? (this.#page ==0 ? 1 : this.#page - 9) : this.#page - (this.#page % 10) + 1;
             if(startIndex !=1) {
                 this.#pageNumberList.innerHTML +=`
-                <a href="javascript:void(0)"><li>&#60;</li></a>
+                <a href="/admin/products?page=${startIndex-1}"><li>&#60;</li></a>
                 `;
        }
     }
@@ -66,7 +66,7 @@ class PageHandler {
 
             for(let i = startIndex; i <= endIndex; i++) {
                 this.#pageNumberList.innerHTML += `
-                <a href="javascript:void(0)"><li>${i}</li></a>
+                <a href="/admin/products?page=${i}"><li>${i}</li></a>
                 `;
         }
     }
@@ -75,7 +75,7 @@ class PageHandler {
         const endIndex = startIndex + 9 <= this.#maxPageNumber ? startIndex + 9 : this.#maxPageNumber;
             if(endIndex != (this.#maxPageNumber/10*10)) {
                 this.#pageNumberList.innerHTML +=`
-                <a href="javascript:void(0)"><li>&#62;</li></a>
+                <a href="/admin/products?page=${endIndex+1}"><li>&#62;</li></a>
                 `;
        }
     }
@@ -100,7 +100,7 @@ class ProductsService {
         const page = (index-1)*10;
         const responseData = ProductsApi.getInstance().getProducts(page);
         this.pageHandler.totalCount = responseData[0].productTotalCount;
-        new PageHandler(page, this.pageHandler.totalCount)
+        new PageHandler(index, this.pageHandler.totalCount)
 
         const products = document.querySelector(".products-body");
         responseData.forEach(responseData => {
@@ -122,5 +122,7 @@ class ProductsService {
 }
 
 window.onload = () => {
-    ProductsService.getInstance().getProducts(2);
+    const urlSearch = new URLSearchParams(location.search);
+    const page = urlSearch.get('page');
+    ProductsService.getInstance().getProducts(page);
 }

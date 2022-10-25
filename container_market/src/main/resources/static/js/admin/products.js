@@ -97,6 +97,7 @@ class ProductsService {
     }
 
     getProducts(index) {
+        if(index==null) index = 1;
         const page = (index-1)*10;
         const responseData = ProductsApi.getInstance().getProducts(page);
         this.pageHandler.totalCount = responseData[0].productTotalCount;

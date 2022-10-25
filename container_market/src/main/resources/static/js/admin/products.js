@@ -96,7 +96,8 @@ class ProductsService {
         totalCount: 0
     }
 
-    getProducts(page) {
+    getProducts(index) {
+        const page = (index-1)*10;
         const responseData = ProductsApi.getInstance().getProducts(page);
         this.pageHandler.totalCount = responseData[0].productTotalCount;
         new PageHandler(page, this.pageHandler.totalCount)
@@ -104,7 +105,7 @@ class ProductsService {
         const products = document.querySelector(".products-body");
         responseData.forEach(responseData => {
             console.log(responseData)
-            products.innerHTML = `
+            products.innerHTML += `
                                 <tr>
                                   <td>${responseData.productId}</td>
                                   <td>${responseData.categoryName}</td>
@@ -121,5 +122,5 @@ class ProductsService {
 }
 
 window.onload = () => {
-    ProductsService.getInstance().getProducts(0);
+    ProductsService.getInstance().getProducts(2);
 }

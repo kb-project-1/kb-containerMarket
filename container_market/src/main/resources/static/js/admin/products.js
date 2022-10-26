@@ -21,7 +21,6 @@ class ProductsApi {
                 dataType : "json",
                 success: (response) => {
                     responseData = response.data;
-                    console.log(responseData[0].productTotalCount)
                 },
                 error: (error) => {
                      console.log(error);
@@ -49,6 +48,7 @@ class PageHandler {
             this.createNumberButtons();
             this.createNextButton();
             this.addPageButtonEvent();
+            this.setColorButton();
     }
 
     createPreButton() {
@@ -63,7 +63,6 @@ class PageHandler {
     createNumberButtons() {
         const startIndex = this.#page % 10 ==0 ? (this.#page ==0 ? 1 : this.#page - 9) : this.#page - (this.#page % 10) + 1;
         const endIndex = startIndex + 9 <= this.#maxPageNumber ? startIndex + 9 : this.#maxPageNumber;
-        console.log(startIndex,endIndex);
 
             for(let i = startIndex; i <= endIndex; i++) {
                 this.#pageNumberList.innerHTML += `
@@ -88,16 +87,13 @@ class PageHandler {
                     if(button.textContent == "<") {
                         const nowPage = ProductsService.getInstance().pageHandler.page;
                         ProductsService.getInstance().pageHandler.page = (nowPage%10 == 0 ? Number(nowPage)-10 : (Math.floor(nowPage/10)*10));
-                        console.log(nowPage);
                         ProductsService.getInstance().loadProducts();
                     } else if (button.textContent == ">") {
                         const nowPage = ProductsService.getInstance().pageHandler.page;
                         ProductsService.getInstance().pageHandler.page = (nowPage%10 == 0 ? Number(nowPage)+1 : (Math.floor(nowPage/10)*10+11));
-                        console.log(ProductsService.getInstance().pageHandler.page);
                         ProductsService.getInstance().loadProducts();
                     } else {
                         const nowPage = ProductsService.getInstance().pageHandler.page;
-                        console.log(ProductsService.getInstance().pageHandler.page);
                         if(button.textContent != nowPage) {
                             ProductsService.getInstance().pageHandler.page = button.textContent;
                             ProductsService.getInstance().loadProducts();
@@ -106,6 +102,17 @@ class PageHandler {
                 }
             });
         }
+
+    setColorButton() {
+        const pageButtons = this.#pageNumberList.querySelectorAll("li");
+        const nowPage = ProductsService.getInstance().pageHandler.page;
+        pageButtons.forEach(button => {
+            if(button.textContent == nowPage) {
+            button.classList.add("page-button");
+            }
+        })
+
+    }
 }
 
 class ProductsService {
@@ -137,7 +144,6 @@ class ProductsService {
         products.innerHTML = ``;
 
         responseData.forEach(product => {
-            console.log(product)
             products.innerHTML += `
                                 <tr>
                                   <td>${product.productId}</td>
@@ -155,6 +161,5 @@ class ProductsService {
 }
 
 window.onload = () => {
-//    ProductsService.getInstance().getProducts(page);
       ProductsService.getInstance().loadProducts();
 }

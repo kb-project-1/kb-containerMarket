@@ -1,15 +1,14 @@
-package com.kb1.containerMarket.web.dto.admin;
+package com.kb1.containerMarket.web.dto;
 
-import com.kb1.containerMarket.web.domain.Product;
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
-public class AdminProductResponseDto {
+public class ProductsRespDto {
     private int productId;
-    private String categoryName;
     private String productName;
     private int productPrice;
+    private String mainImg;
     private int productTotalCount;
 }

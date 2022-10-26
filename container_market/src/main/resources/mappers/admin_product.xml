@@ -34,7 +34,7 @@
         )
     </insert>
 
-    <select id="getProducts" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.AdminProduct">
+    <select id="getProducts" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.AdminProducts">
         select
             pm.id,
             pm.pdt_name,

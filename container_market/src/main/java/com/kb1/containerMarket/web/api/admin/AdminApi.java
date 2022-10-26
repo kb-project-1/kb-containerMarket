@@ -40,4 +40,14 @@ public class AdminApi {
     public ResponseEntity<?> getProducts(int page) throws Exception {
         return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getProducts(page)));
     }
+
+    @GetMapping("/option/products/mst")
+    public ResponseEntity<?> getProductOptions() throws Exception {
+        return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getProductOptions()));
+    }
+
+    @GetMapping("/option/products/size/{productId}")
+    public ResponseEntity<?> getProductSize(@PathVariable int productId) throws Exception {
+        return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getProductSize(productId)));
+    }
 }

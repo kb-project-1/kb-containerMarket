@@ -1,15 +1,17 @@
 package com.kb1.containerMarket.service.admin;
 
 
-import com.kb1.containerMarket.web.dto.admin.AdminProductsResponseDto;
-import com.kb1.containerMarket.web.dto.admin.CategoryResponseDto;
-import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
+import com.kb1.containerMarket.web.dto.admin.*;
 
 import java.util.List;
 
 public interface ProductManagementService {
-    public List<CategoryResponseDto> getCategoryList() throws Exception;
+    public List<CategoryRespDto> getCategoryList() throws Exception;
     public void registerMst(ProductRegisterReqDto productRegisterReqDto) throws Exception;
 
-    public List<AdminProductsResponseDto> getProducts(int page) throws Exception;
+    public List<AdminProductsRespDto> getProducts(int page) throws Exception;
+
+    public List<ProductOptionRespDto> getProductOptions() throws Exception;
+
+    public List<ProductSizeRespDto> getProductSize(int productId) throws Exception;
 }

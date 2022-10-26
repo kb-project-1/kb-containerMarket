@@ -4,9 +4,9 @@ import com.kb1.containerMarket.exception.CustomInternalServerErrorException;
 import com.kb1.containerMarket.repository.admin.ProductManagementRepository;
 import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.admin.AdminProducts;
-import com.kb1.containerMarket.web.dto.admin.AdminProductsResponseDto;
-import com.kb1.containerMarket.web.dto.admin.CategoryResponseDto;
-import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
+import com.kb1.containerMarket.web.domain.admin.ProductOption;
+import com.kb1.containerMarket.web.domain.admin.ProductSize;
+import com.kb1.containerMarket.web.dto.admin.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +20,12 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
     private final ProductManagementRepository productManagementRepository;
 
     @Override
-    public List<CategoryResponseDto> getCategoryList() throws Exception {
+    public List<CategoryRespDto> getCategoryList() throws Exception {
         List<ProductCategory> categoryList = productManagementRepository.getCategoryList();
-        List<CategoryResponseDto> categoryResponseDtos = categoryList
+        List<CategoryRespDto> categoryRespDtos = categoryList
                 .stream().map(ProductCategory::toDto).collect(Collectors.toList());
 
-        return categoryResponseDtos;
+        return categoryRespDtos;
     }
 
     @Override
@@ -36,10 +36,24 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
     }
 
     @Override
-    public List<AdminProductsResponseDto> getProducts(int page) throws Exception {
+    public List<AdminProductsRespDto> getProducts(int page) throws Exception {
         page = (page - 1) * 10;
         List<AdminProducts> products = productManagementRepository.getProducts(page);
-        List<AdminProductsResponseDto> productResponseDtos = products.stream().map(AdminProducts::toDto).collect(Collectors.toList());
+        List<AdminProductsRespDto> productResponseDtos = products.stream().map(AdminProducts::toDto).collect(Collectors.toList());
         return productResponseDtos;
+    }
+
+    @Override
+    public List<ProductOptionRespDto> getProductOptions() throws Exception {
+        List<ProductOption> productOptions = productManagementRepository.getProductOptions();
+        List<ProductOptionRespDto> productOptionRespDtos = productOptions.stream().map(ProductOption::toDto).collect(Collectors.toList());
+        return productOptionRespDtos;
+    }
+
+    @Override
+    public List<ProductSizeRespDto> getProductSize(int productId) throws Exception {
+        List<ProductSize> productSizes = productManagementRepository.getProductSize(productId);
+        List<ProductSizeRespDto> productSizeRespDtos = productSizes.stream().map(ProductSize::toDto).collect(Collectors.toList());
+        return productSizeRespDtos;
     }
 }

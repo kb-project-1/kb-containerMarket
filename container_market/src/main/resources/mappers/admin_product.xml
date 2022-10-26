@@ -49,4 +49,26 @@
                                  ) pm_cnt on (1=1)
         limit #{page}, 10
     </select>
+
+    <select id="getProductOptions" resultType="com.kb1.containerMarket.web.domain.admin.ProductOption">
+        select
+            pm.id as pdt_id,
+            pcm.category_name,
+            pm.pdt_name
+        from
+            pdt_mst pm
+        left outer join pdt_category_mst pcm on (pm.category_id = pcm.id)
+    </select>
+
+    <select id="getProductSize" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductSize">
+        select
+            psd.id as size_id,
+            psm.size_name
+        from pdt_mst pm
+            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+            left outer join pdt_size_dtl psd on(psd.group_id = pcm.group_id)
+            left outer join pdt_size_mst psm on(psm.id = psd.size_id)
+        where
+            pm.id = #{productId}
+    </select>
 </mapper>

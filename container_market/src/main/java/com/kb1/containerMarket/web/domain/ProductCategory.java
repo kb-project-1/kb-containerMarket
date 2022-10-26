@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.web.domain;
 
-import com.kb1.containerMarket.web.dto.admin.CategoryResponseDto;
+import com.kb1.containerMarket.web.dto.admin.CategoryRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +13,8 @@ public class ProductCategory {
     private int group_id;
     private String category_name;
 
-    public CategoryResponseDto toDto() {
-        return CategoryResponseDto.builder()
+    public CategoryRespDto toDto() {
+        return CategoryRespDto.builder()
                 .id(category_id)
                 .name(category_name)
                 .build();

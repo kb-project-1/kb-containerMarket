@@ -17,4 +17,9 @@ public class AdminController {
     public String products() {
         return "admin/products";
     }
+
+    @GetMapping("/product/register/dtl")
+    public String productRegisterDtl() {
+        return "admin/product_dtl_registration";
+    }
 }

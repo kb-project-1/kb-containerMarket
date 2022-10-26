@@ -50,13 +50,10 @@ class pageScroll {
         const body = document.querySelector("body");
 
         window.onscroll = () => {
-//            console.log("문서 전체 높이: " + body.offsetHeight);
-//             console.log("눈에 보이는 영역 높이: " + html.clientHeight);
-//             console.log("스크롤의 상단 위치: " + html.scrollTop);
-//console.log(html.scrllTop)
-            let scrollStatus = body.offsetHeight - html.clientHeight - html.scrollTop;
+
+            let scrollStatus = html.offsetHeight - html.clientHeight - html.scrollTop;
             console.log("현재 스크롤 상태:" + scrollStatus);
-            if(scrollStatus > -1200 && scrollStatus < -1100 ) {
+            if(scrollStatus > -10 && scrollStatus < 10 ) {
                 const nowPage = ProductsService.getInstance().productsEntity.page;
                 ProductsService.getInstance().productsEntity.page = Number(nowPage) + 1;
                 ProductsService.getInstance().loadProducts();

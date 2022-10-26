@@ -12,13 +12,16 @@ class ProductsApi {
         let responseData = null;
 
         const url = location.href;
-        const category = url.substring(url.lastIndexOf("/") + 1);
+        let category = url.substring(url.lastIndexOf("/") + 1);
+        if(category == "") {
+            category = "all";
+        }
         console.log(category)
 
         $.ajax({
             async: false,
             type: "get",
-            url: "/api/products/" + category,
+            url: "/api/category/" + category,
             data: {
                 "page": page
             },
@@ -47,9 +50,13 @@ class pageScroll {
         const body = document.querySelector("body");
 
         window.onscroll = () => {
+//            console.log("문서 전체 높이: " + body.offsetHeight);
+//             console.log("눈에 보이는 영역 높이: " + html.clientHeight);
+//             console.log("스크롤의 상단 위치: " + html.scrollTop);
+//console.log(html.scrllTop)
             let scrollStatus = body.offsetHeight - html.clientHeight - html.scrollTop;
             console.log("현재 스크롤 상태:" + scrollStatus);
-            if(scrollStatus > -50 && scrollStatus < 50) {
+            if(scrollStatus > -1200 && scrollStatus < -1100 ) {
                 const nowPage = ProductsService.getInstance().productsEntity.page;
                 ProductsService.getInstance().productsEntity.page = Number(nowPage) + 1;
                 ProductsService.getInstance().loadProducts();
@@ -78,12 +85,11 @@ class ProductsService{
     loadProducts() {
             if(this.productsEntity.page == 1 || this.productsEntity.page < Number(this.productsEntity.maxPage) + 1) {
                 const responseData = ProductsApi.getInstance().getProducts(this.productsEntity.page);
-                console.log(responseData);
                 if(responseData.length > 0) {
                     this.productsEntity.totalCount = responseData[0].productTotalCount;
-                    this.productsEntity.maxPage = responseData[0].productTotalCount % 16 ==0
-                                                        ? responseData[0].productTotalCount / 16
-                                                        : Math.floor(responseData[0].productTotalCount / 16) + 1;
+                    this.productsEntity.maxPage = responseData[0].productTotalCount % 9 ==0
+                                                        ? responseData[0].productTotalCount / 9
+                                                        : Math.floor(responseData[0].productTotalCount / 9) + 1;
                     this.getProducts(responseData);
                 } else {
                     alert("해당 카테고리에 등록된 상품 정보가 없습니다.");

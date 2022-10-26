@@ -37,6 +37,7 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
 
     @Override
     public List<AdminProductsResponseDto> getProducts(int page) throws Exception {
+        page = (page - 1) * 10;
         List<AdminProducts> products = productManagementRepository.getProducts(page);
         List<AdminProductsResponseDto> productResponseDtos = products.stream().map(AdminProducts::toDto).collect(Collectors.toList());
         return productResponseDtos;

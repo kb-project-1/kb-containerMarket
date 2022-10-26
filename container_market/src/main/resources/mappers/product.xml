@@ -28,6 +28,6 @@
         </if>
         group by
         pm.id
-        limit #{index}, 10
+        limit #{index}, 9
     </select>
 </mapper>

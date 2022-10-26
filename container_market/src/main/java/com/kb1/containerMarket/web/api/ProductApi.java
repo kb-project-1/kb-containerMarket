@@ -16,7 +16,7 @@ public class ProductApi {
 
     private final ProductService productService;
 
-    @GetMapping("/products/{category}")
+    @GetMapping("/category/{category}")
     public ResponseEntity<?> getProducts(@PathVariable String category, int page) throws Exception {
         return ResponseEntity.ok(new CMRespDto<>("successfully",productService.getProducts(category,page)));
     }

@@ -48,13 +48,14 @@ class PageHandler {
             this.createPreButton();
             this.createNumberButtons();
             this.createNextButton();
+            this.addPageButtonEvent();
     }
 
     createPreButton() {
         const startIndex = this.#page % 10 ==0 ? (this.#page ==0 ? 1 : this.#page - 9) : this.#page - (this.#page % 10) + 1;
             if(startIndex !=1) {
                 this.#pageNumberList.innerHTML +=`
-                <a href="/admin/products?page=${startIndex-1}"><li>&#60;</li></a>
+                <a href="javascript:void(0)"><li>&#60;</li></a>
                 `;
        }
     }
@@ -66,7 +67,7 @@ class PageHandler {
 
             for(let i = startIndex; i <= endIndex; i++) {
                 this.#pageNumberList.innerHTML += `
-                <a href="/admin/products?page=${i}"><li>${i}</li></a>
+                <a href="javascript:void(0)"><li>${i}</li></a>
                 `;
         }
     }
@@ -75,10 +76,36 @@ class PageHandler {
         const endIndex = startIndex + 9 <= this.#maxPageNumber ? startIndex + 9 : this.#maxPageNumber;
             if(endIndex != (this.#maxPageNumber/10*10)) {
                 this.#pageNumberList.innerHTML +=`
-                <a href="/admin/products?page=${endIndex+1}"><li>&#62;</li></a>
+                <a href="javascript:void(0)"><li>&#62;</li></a>
                 `;
        }
     }
+
+    addPageButtonEvent() {
+            const pageButtons = this.#pageNumberList.querySelectorAll("li");
+            pageButtons.forEach(button => {
+                button.onclick = () => {
+                    if(button.textContent == "<") {
+                        const nowPage = ProductsService.getInstance().pageHandler.page;
+                        ProductsService.getInstance().pageHandler.page = (nowPage%10 == 0 ? Number(nowPage)-10 : (Math.floor(nowPage/10)*10));
+                        console.log(nowPage);
+                        ProductsService.getInstance().loadProducts();
+                    } else if (button.textContent == ">") {
+                        const nowPage = ProductsService.getInstance().pageHandler.page;
+                        ProductsService.getInstance().pageHandler.page = (nowPage%10 == 0 ? Number(nowPage)+1 : (Math.floor(nowPage/10)*10+11));
+                        console.log(ProductsService.getInstance().pageHandler.page);
+                        ProductsService.getInstance().loadProducts();
+                    } else {
+                        const nowPage = ProductsService.getInstance().pageHandler.page;
+                        console.log(ProductsService.getInstance().pageHandler.page);
+                        if(button.textContent != nowPage) {
+                            ProductsService.getInstance().pageHandler.page = button.textContent;
+                            ProductsService.getInstance().loadProducts();
+                        }
+                    }
+                }
+            });
+        }
 }
 
 class ProductsService {
@@ -92,26 +119,31 @@ class ProductsService {
     }
 
     pageHandler = {
-        page: 0,
+        page: 1,
         totalCount: 0
     }
 
-    getProducts(index) {
-        if(index==null) index = 1;
-        const page = (index-1)*10;
-        const responseData = ProductsApi.getInstance().getProducts(page);
+    loadProducts() {
+        const responseData = ProductsApi.getInstance().getProducts(this.pageHandler.page);
         this.pageHandler.totalCount = responseData[0].productTotalCount;
-        new PageHandler(index, this.pageHandler.totalCount)
+
+        new PageHandler(this.pageHandler.page, this.pageHandler.totalCount);
+        this.getProducts(responseData);
+    }
+
+    getProducts(responseData) {
 
         const products = document.querySelector(".products-body");
-        responseData.forEach(responseData => {
-            console.log(responseData)
+        products.innerHTML = ``;
+
+        responseData.forEach(product => {
+            console.log(product)
             products.innerHTML += `
                                 <tr>
-                                  <td>${responseData.productId}</td>
-                                  <td>${responseData.categoryName}</td>
-                                  <td>${responseData.productName}</td>
-                                  <td>${responseData.productPrice}</td>
+                                  <td>${product.productId}</td>
+                                  <td>${product.categoryName}</td>
+                                  <td>${product.productName}</td>
+                                  <td>${product.productPrice}</td>
                                   <td><button type="button">보기</button></td>
                                   <td><button type="button">추가</button></td>
                                   <td><button type="button">수정</button></td>
@@ -123,7 +155,6 @@ class ProductsService {
 }
 
 window.onload = () => {
-    const urlSearch = new URLSearchParams(location.search);
-    const page = urlSearch.get('page');
-    ProductsService.getInstance().getProducts(page);
+//    ProductsService.getInstance().getProducts(page);
+      ProductsService.getInstance().loadProducts();
 }

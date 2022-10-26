@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class ProductsController {
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public String loadCollections(@PathVariable @Nullable String category) {
         return "/index";
     }

@@ -4,14 +4,13 @@ import com.kb1.containerMarket.aop.annotation.LogAspect;
 import com.kb1.containerMarket.aop.annotation.ValidAspect;
 import com.kb1.containerMarket.service.admin.ProductManagementService;
 import com.kb1.containerMarket.web.dto.CMRespDto;
+import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
 import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Random;
 
 @RestController
 @RequiredArgsConstructor
@@ -49,5 +48,13 @@ public class AdminApi {
     @GetMapping("/option/products/size/{productId}")
     public ResponseEntity<?> getProductSize(@PathVariable int productId) throws Exception {
         return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getProductSize(productId)));
+    }
+
+    @PostMapping("/product/dtl")
+    public ResponseEntity<?> registerdtl(@RequestBody ProductDtlRegisterDto productDtlRegisterDto) throws Exception
+    {
+        productManagementService.checkDuplicatedColor(productDtlRegisterDto);
+        productManagementService.registerDtl(productDtlRegisterDto);
+        return ResponseEntity.ok().body(new CMRespDto<>( "Register successfully", true));
     }
 }

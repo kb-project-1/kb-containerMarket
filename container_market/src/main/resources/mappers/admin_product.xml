@@ -71,4 +71,31 @@
         where
             pm.id = #{productId}
     </select>
+
+    <insert id="saveProductDtl" parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail">
+        insert into
+        pdt_dtl
+        values(
+        0,
+        #{pdt_id},
+        #{size_id},
+        #{pdt_color},
+        #{pdt_stock},
+        now(),
+        now()
+        )
+    </insert>
+
+    <select id="findProductColor"
+            parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail"
+            resultType="Integer">
+        select
+        count(*)
+        from
+        pdt_dtl
+        where
+        pdt_id = #{pdt_id}
+        and size_id = #{size_id}
+        and pdt_color = #{pdt_color}
+    </select>
 </mapper>

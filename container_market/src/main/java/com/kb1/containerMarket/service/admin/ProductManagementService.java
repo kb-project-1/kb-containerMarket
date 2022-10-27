@@ -14,4 +14,8 @@ public interface ProductManagementService {
     public List<ProductOptionRespDto> getProductOptions() throws Exception;
 
     public List<ProductSizeRespDto> getProductSize(int productId) throws Exception;
+
+    public void registerDtl(ProductDtlRegisterDto productDtlRegisterDto) throws Exception;
+
+    public void checkDuplicatedColor(ProductDtlRegisterDto productDtlRegisterDto) throws Exception;
 }

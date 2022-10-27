@@ -1,6 +1,7 @@
 package com.kb1.containerMarket.service.admin;
 
 import com.kb1.containerMarket.exception.CustomInternalServerErrorException;
+import com.kb1.containerMarket.exception.CustomValidationException;
 import com.kb1.containerMarket.repository.admin.ProductManagementRepository;
 import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.admin.AdminProducts;
@@ -10,7 +11,9 @@ import com.kb1.containerMarket.web.dto.admin.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -55,5 +58,20 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
         List<ProductSize> productSizes = productManagementRepository.getProductSize(productId);
         List<ProductSizeRespDto> productSizeRespDtos = productSizes.stream().map(ProductSize::toDto).collect(Collectors.toList());
         return productSizeRespDtos;
+    }
+
+    @Override
+    public void registerDtl(ProductDtlRegisterDto productDtlRegisterDto) throws Exception {
+        if(productManagementRepository.saveProductDtl(productDtlRegisterDto.toEntity()) == 0)
+            throw new CustomInternalServerErrorException("상품 등록 오류");
+    }
+
+    @Override
+    public void checkDuplicatedColor(ProductDtlRegisterDto productDtlRegisterDto) throws Exception {
+        if(productManagementRepository.findProductColor(productDtlRegisterDto.toEntity() ) > 0) {
+            Map<String, String> errorMap = new HashMap<String, String>();
+            errorMap.put("error", "이미 등록된 상품입니다.");
+            throw new CustomValidationException("Duplicated Error",errorMap);
+        }
     }
 }

@@ -3,8 +3,10 @@ package com.kb1.containerMarket.repository.admin;
 import com.kb1.containerMarket.web.domain.Product;
 import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.admin.AdminProducts;
+import com.kb1.containerMarket.web.domain.admin.ProductDetail;
 import com.kb1.containerMarket.web.domain.admin.ProductOption;
 import com.kb1.containerMarket.web.domain.admin.ProductSize;
+import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -18,7 +20,11 @@ public interface ProductManagementRepository {
 
     public List<AdminProducts> getProducts(int page) throws Exception;
 
-    List<ProductOption> getProductOptions() throws Exception;
+    public List<ProductOption> getProductOptions() throws Exception;
 
-    List<ProductSize> getProductSize(int productId) throws Exception;
+    public List<ProductSize> getProductSize(int productId) throws Exception;
+
+    public int saveProductDtl(ProductDetail productDetail);
+
+    int findProductColor(ProductDetail productDetail);
 }

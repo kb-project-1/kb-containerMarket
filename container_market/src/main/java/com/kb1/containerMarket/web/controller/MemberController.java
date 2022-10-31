@@ -24,4 +24,7 @@ public class MemberController {
     public String join() {
         return "/member/join";
     }
+
+    @GetMapping("/modify")
+    public String modify() {return "/member/modify";}
 }

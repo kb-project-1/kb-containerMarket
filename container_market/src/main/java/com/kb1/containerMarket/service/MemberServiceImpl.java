@@ -39,4 +39,14 @@ public class MemberServiceImpl implements MemberService{
         }
     }
 
+    @Override
+    public Member getMember(String username) throws Exception {
+        Member member = memberRepository.findMemberByUsername(username);
+
+        if(member != null){
+            return member;
+        }else{
+            return null;
+        }
+    }
 }

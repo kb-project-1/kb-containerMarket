@@ -49,4 +49,12 @@ public class MemberServiceImpl implements MemberService{
             return null;
         }
     }
+
+    @Override
+    public void updateUser(JoinReqDto joinReqDto) throws Exception {
+        int result = memberRepository.updateUser(joinReqDto.toEntity());
+        if (result == 0){
+            throw new CustomInternalServerErrorException("회원수정 중 문제가 발생하였습니다.");
+        }
+    }
 }

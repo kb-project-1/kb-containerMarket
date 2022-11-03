@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kb1.containerMarket.repository.MyshopRepository">
+
+    <select id="getOrderListAll" parameterType="String" resultType="com.kb1.containerMarket.web.domain.OrderList">
+        select
+            od.order_date,
+            pm.pdt_name as name,
+            od.count,
+            pm.pdt_price as price,
+            odm.status
+        from
+            order_dtl od
+            left outer join pdt_mst pm on (od.productId = pm.id)
+            left outer join order_detail_mst odm on (od.status = odm.id)
+        where
+            username = #{username}
+    </select>
+</mapper>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"/>
+<head>
+    <link rel="stylesheet" href="/static/css/list.css">
+</head>
+<body>
+<div id="container">
+    <header th:replace="/fragments/header :: header"/>
+    <main id="main">
+        <nav th:replace="/fragments/nav :: nav"/>
+        <div id="contents">
+            <div class="title-area">
+                <h2>주문조회</h2>
+            </div>
+            <div class="xans-element- xans-myshop xans-myshop-orderhistorylistitem ec-base-table typeList">
+                <div class="title">
+                    <h3>주문 상품 정보</h3>
+                </div>
+                <table border="1" summary>
+                    <caption>주문 상품 정보</caption>
+                    <colgroup>
+                        <col style="width: 135px;">
+                        <col style="width: 93px;">
+                        <col style="width: auto;">
+                        <col style="width: 61px;">
+                        <col style="width: 111px;">
+                        <col style="width: 111px;">
+                        <col style="width: 111px;">
+                    </colgroup>
+                    <thead>
+                        <th scope="col">주문일자<br>[주문번호]</th>
+                        <th scope="col">이미지</th>
+                        <th scope="col">상품정보</th>
+                        <th scope="col">수량</th>
+                        <th scope="col">상품구매금액</th>
+                        <th scope="col">주문처리상태</th>
+                        <th scope="col">취소/교환/반품</th>
+                    </thead>
+                    <!-- 주문이후html -->
+                    <tbody class="center displaynone">
+
+                    </tbody>
+                </table>
+                <button type="button" class="testbtn btnNormal">테스트 버튼</button>
+                <p class="message">주문 내역이 없습니다.</p>
+            </div>
+            <div class="page-btn">
+                <a href="#" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first.gif" alt="첫 페이지"></a>
+                <a href="#" ><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지"></a>
+                <ol>
+                    <li class="btn-record">
+                        <a href="#" class="this">1</a>
+                    </li>
+                </ol>
+                <a href="#"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지"></a>
+                <a href="#" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last.gif" alt="마지막 페이지"></a>
+            </div>
+
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</div>
+<script src="/static/js/myshop/order/list.js"></script>
+</body>
+</html>

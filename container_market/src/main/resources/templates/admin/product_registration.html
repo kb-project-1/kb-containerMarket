@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/admin/admin_head :: head"/>
+<head>
+  <link rel="stylesheet" href="/static/css/admin/register.css">
+</head>
+<body>
+<div id="container">
+  <header th:replace="/fragments/header :: header"/>
+  <main id="main">
+    <nav th:replace="/fragments/nav :: nav"/>
+    <h1 class="admin-title">ADMIN PRODUCT REGISTRATION</h1>
+    <aside th:replace="/fragments/admin/aside :: aside"/>
+    <div class="admin">
+      <div class="admin-container">
+        <section class="admin-main">
+          <div class="regist-header">
+            <select class="product-inputs product-category">
+            </select>
+            <input type="text" class="product-inputs" placeholder="상품명">
+            <input type="number" min="100" step="100" class="product-inputs" placeholder="가격">
+          </div>
+          <div class="regist-info regist-info-invisible">
+            <textarea class="product-inputs" placeholder="간단 설명"></textarea>
+            <textarea class="product-inputs" placeholder="상세 설명"></textarea>
+          </div>
+
+          <button type="button" class="btn regist-button">등록하기</button>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/static/js/admin/product_registration.js"></script>
+</body>
+</html>

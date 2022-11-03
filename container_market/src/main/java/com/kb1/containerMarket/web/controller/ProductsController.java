@@ -12,4 +12,7 @@ public class ProductsController {
     public String loadCollections(@PathVariable @Nullable String category) {
         return "/index";
     }
+
+    @GetMapping("/product/product")
+    public String loadProduct(){ return "/product/product"; }
 }

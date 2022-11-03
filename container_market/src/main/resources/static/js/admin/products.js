@@ -169,7 +169,6 @@ class ProductsService {
                                   <td>${product.productName}</td>
                                   <td>${product.productPrice}</td>
                                   <td><button type="button">보기</button></td>
-                                  <td><button type="button">추가</button></td>
                                   <td><button type="button">수정</button></td>
                                   <td><button type="button" class="delete-button" value="${product.productId}">삭제</button></td>
                                 </tr>

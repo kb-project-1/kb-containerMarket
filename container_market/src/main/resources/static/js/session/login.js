@@ -15,7 +15,7 @@ window.onload = () => {
             }else{
                 hrefLogin.innerHTML = `<a href="/logout">LOGOUT</a>`;
                 if(response.data.role_id == 3){
-                    hrefJoin.innerHTML = `<a href="/admin/index">ADMIN PAGE</a>`;
+                    hrefJoin.innerHTML = `<a href="/admin/products">ADMIN PAGE</a>`;
                 }else {
                     hrefJoin.innerHTML = `<a href="/member/modify">MODIFY</a>`;
                 }

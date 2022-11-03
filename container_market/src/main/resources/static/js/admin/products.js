@@ -28,6 +28,24 @@ class ProductsApi {
             });
             return responseData;
         }
+
+    deleteProduct(productId) {
+            let responseData = null;
+
+            $.ajax({
+                async: false,
+                type: "delete",
+                url: "/api/admin/product/"+productId,
+                dataType : "json",
+                success: (response) => {
+                    alert("성공적으로 삭제되었습니다.");
+                    location.reload();
+                },
+                error: (error) => {
+                     alert("오류가 발생했습니다.");
+                }
+            });
+        }
 }
 
 class PageHandler {
@@ -153,13 +171,26 @@ class ProductsService {
                                   <td><button type="button">보기</button></td>
                                   <td><button type="button">추가</button></td>
                                   <td><button type="button">수정</button></td>
-                                  <td><button type="button">삭제</button></td>
+                                  <td><button type="button" class="delete-button" value="${product.productId}">삭제</button></td>
                                 </tr>
             `
         });
+    }
+
+    setDeleteButton() {
+        const deleteButtons = document.querySelectorAll(".delete-button");
+        deleteButtons.forEach((button) => {
+            button.onclick = () => {
+                const productId = button.value;
+                if(confirm("정말로 삭제 하시겠습니까?")) {
+                    ProductsApi.getInstance().deleteProduct(productId);
+                }
+            }
+        })
     }
 }
 
 window.onload = () => {
       ProductsService.getInstance().loadProducts();
+      ProductsService.getInstance().setDeleteButton();
 }

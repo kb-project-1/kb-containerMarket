@@ -29,6 +29,7 @@ public class AdminApi {
                 .body(new CMRespDto<>("Register Successfully",true));
     }
 
+
     @GetMapping("/product/category")
     public ResponseEntity<?> getCategoryList() throws Exception {
         return ResponseEntity.ok().body(new CMRespDto<>( "Get successfully", productManagementService.getCategoryList()));
@@ -56,5 +57,10 @@ public class AdminApi {
         productManagementService.checkDuplicatedColor(productDtlRegisterDto);
         productManagementService.registerDtl(productDtlRegisterDto);
         return ResponseEntity.ok().body(new CMRespDto<>( "Register successfully", true));
+    }
+    @DeleteMapping("/product/{productId}")
+    public ResponseEntity<?> deleteProductMst(@PathVariable int productId) {
+        productManagementService.deleteProductMst(productId);
+        return ResponseEntity.ok().body(new CMRespDto<>("Delete Successfully", true));
     }
 }

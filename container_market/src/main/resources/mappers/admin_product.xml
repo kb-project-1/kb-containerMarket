@@ -98,4 +98,10 @@
         and size_id = #{size_id}
         and pdt_color = #{pdt_color}
     </select>
+    <delete id="deleteProductMst" parameterType="int">
+        delete
+            from
+        pdt_mst
+            where id = #{pdt_id}
+    </delete>
 </mapper>

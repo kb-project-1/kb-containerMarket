@@ -27,4 +27,6 @@ public interface ProductManagementRepository {
     public int saveProductDtl(ProductDetail productDetail);
 
     int findProductColor(ProductDetail productDetail);
+
+    int deleteProductMst(int pdt_id);
 }

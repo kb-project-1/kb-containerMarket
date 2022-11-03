@@ -74,4 +74,11 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
             throw new CustomValidationException("Duplicated Error",errorMap);
         }
     }
+
+    @Override
+    public void deleteProductMst(int productId) {
+        if(productManagementRepository.deleteProductMst(productId) == 0) {
+            throw new CustomInternalServerErrorException("상품 삭제 오류");
+        }
+    }
 }

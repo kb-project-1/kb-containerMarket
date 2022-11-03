@@ -189,7 +189,7 @@ class ProductsService {
     }
 }
 
-window.onload = () => {
-      ProductsService.getInstance().loadProducts();
-      ProductsService.getInstance().setDeleteButton();
-}
+window.addEventListener('load', () => {
+    ProductsService.getInstance().loadProducts();
+          ProductsService.getInstance().setDeleteButton();
+});

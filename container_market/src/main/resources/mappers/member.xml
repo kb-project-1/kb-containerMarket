@@ -75,4 +75,13 @@
         where
             username = #{username}
     </update>
+    <update id="updateProvider" parameterType="com.kb1.containerMarket.web.domain.Member">
+        update
+            member_mst
+        set
+            provider = #{provider},
+            update_date = now()
+        where
+            id = #{id}
+    </update>
 </mapper>

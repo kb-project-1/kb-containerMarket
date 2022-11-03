@@ -262,7 +262,7 @@ class ProductImgFile {
         }
 }
 
-window.onload = () => {
-        Option.getInstance();
-        ProductImgFile.getInstance(); // 여기서부터 해야함
-}
+window.addEventListener('load', () => {
+           Option.getInstance();
+           ProductImgFile.getInstance();
+});

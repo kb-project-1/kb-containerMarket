@@ -148,8 +148,8 @@ function getLoginSession() {
     });
 }
 
-window.onload = () =>{
-    getLoginSession();
-    ProductsService.getInstance().loadProducts();
-    new pageScroll;
-}
+window.addEventListener('load', () => {
+        getLoginSession();
+        ProductsService.getInstance().loadProducts();
+        new pageScroll;
+});

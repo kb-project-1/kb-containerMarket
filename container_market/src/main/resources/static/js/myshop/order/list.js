@@ -1,8 +1,10 @@
-const testbtn = document.querySelector(".testbtn");
+//const testbtn = document.querySelector(".testbtn");
 
-testbtn.onclick = () => {
-    alert("불러오기");
 
+window.addEventListener('onload',init());
+
+
+function init() {
     $.ajax({
         async: false,
         type: "get",
@@ -29,15 +31,18 @@ function loadList(list) {
     center.innerHTML = "";
 
     list.forEach(data => {
+        let pDate = data.order_date.replace("T"," ");
+        let pPrice = data.price.toLocaleString('en-US');
+
         center.innerHTML += `
             <tr>
-                <td>${data.order_date}</td>
+                <td>${pDate}</td>
                 <td>${data.image_src}</td>
                 <td>${data.name}</td>
                 <td>${data.count}</td>
-                <td>${data.price}</td>
+                <td>${pPrice}</td>
                 <td>${data.status}</td>
-                <td>${data.status2}</td>
+                <td>불가능</td>
             </tr>
         `;
     });

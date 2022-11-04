@@ -58,5 +58,26 @@ textarea {
     left:20%;
 }
 
+.btn2 {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #d7d5d5;
+    color: #2e2e2e;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.btn2:hover {
+    background-color: #d7d5d5;
+    border: 1px solid #d7d5d5;
+}
+
+.btn {
+    border: 1px solid #d7d5d5;
+    color: #2e2e2e;
+    width: 50px;
+}
+
 
 

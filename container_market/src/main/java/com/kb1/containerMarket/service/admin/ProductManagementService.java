@@ -20,4 +20,6 @@ public interface ProductManagementService {
     public void checkDuplicatedColor(ProductDtlRegisterDto productDtlRegisterDto) throws Exception;
 
     public void deleteProductMst(int productId);
+
+    public void registerImg(ProductImgReqDto productImgReqDto) throws Exception;
 }

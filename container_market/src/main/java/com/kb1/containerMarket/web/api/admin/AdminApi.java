@@ -5,6 +5,7 @@ import com.kb1.containerMarket.aop.annotation.ValidAspect;
 import com.kb1.containerMarket.service.admin.ProductManagementService;
 import com.kb1.containerMarket.web.dto.CMRespDto;
 import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
+import com.kb1.containerMarket.web.dto.admin.ProductImgReqDto;
 import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -62,5 +63,14 @@ public class AdminApi {
     public ResponseEntity<?> deleteProductMst(@PathVariable int productId) {
         productManagementService.deleteProductMst(productId);
         return ResponseEntity.ok().body(new CMRespDto<>("Delete Successfully", true));
+    }
+
+    @LogAspect
+    @PostMapping("/product/img")
+    public ResponseEntity<?> registerImg(ProductImgReqDto productImgReqDto) throws Exception {
+
+        productManagementService.registerImg(productImgReqDto);
+        return ResponseEntity.created(null)
+                .body(new CMRespDto<>("Register Successfully", true));
     }
 }

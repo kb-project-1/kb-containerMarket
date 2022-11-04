@@ -1,0 +1,18 @@
+.admin {
+    width: 90%;
+    float: right;
+}
+.admin-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-container {
+    justify-content: center;
+
+    margin: 0px auto;
+}
+.admin-main {
+    width: 100%;
+    padding: 0px 20px;
+}

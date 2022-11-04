@@ -1,0 +1,106 @@
+#content {
+    width: 80%;
+    float: right;
+}
+
+table {
+    width: 100%;
+    border: 0;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+th {
+    display: table-cell;
+    border: 1px solid #dfdfdf;
+    border-left: none;
+    border-bottom: none;
+    padding: 11px 0 10px 18px;
+
+    background-color: #fbfafa;
+    color: #353535;
+    font-weight: normal;
+    text-align: left;
+}
+
+tbody tr:last-child > th,
+tbody tr:last-child > td{
+    border-bottom: 1px solid #dfdfdf;
+}
+
+td {
+    border-top: 1px solid #dfdfdf;
+    padding: 8px 10px 7px;
+
+    color: #353535;
+    vertical-align: middle;
+}
+
+input, select, textarea {
+    font-size: 100%;
+    font-family: "돋움",Dotum;
+    color: #353535;
+    vertical-align: middle;
+
+}
+
+input[type=text], input[type=password]{
+    height: 18px;
+
+    border: 1px solid #d5d5d5;
+    padding: 2px 4px;
+
+    font-size: 12px;
+}
+
+#email {
+    margin-right: 4px;
+}
+
+select {
+    height: 24px;
+    border: 1px solid #d5d5d5;
+}
+
+#mobile1 {
+    width: 60px;
+    margin: 0 4px 0 0;
+}
+
+#mobile2, #mobile3 {
+    width: 50px;
+    margin: 0 4px;
+}
+
+.div-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 120px;
+    margin-top: 20px;
+    border: 1px solid #d7d5d5;
+    box-sizing: border-box;
+    padding: 10px 8px;
+
+    display: inline-block;
+    font-weight: normal;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#submit {
+    background-color: #000;
+    color: #fff;
+}
+
+#cancel {
+    background-color: #77797d;
+    color: #fff;
+}

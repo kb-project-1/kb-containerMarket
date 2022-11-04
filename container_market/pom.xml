@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kb-containerMarket</groupId>
-	<artifactId>kb-containerMarket</artifactId>
+	<artifactId>1조-컨테이너마켓</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kb-containerMarket</name>
+	<name>1조-컨테이너마켓</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

@@ -1,17 +1,22 @@
 class ProductMst {
-    #category;
+    #id;
     #name;
+    #category;
     #price;
     #simpleInfo;
     #detailInfo;
 
-    constructor(category, name, price, simpleInfo, detailInfo, optionInfo, managementInfo, shippingInfo) {
+    constructor(id,category, name, price, simpleInfo, detailInfo, optionInfo, managementInfo, shippingInfo) {
+        this.#id = id;
         this.#category = category;
         this.#name = name;
         this.#price = price;
         this.#simpleInfo = simpleInfo;
         this.#detailInfo = detailInfo;
     }
+
+    getId() {return this.#id;}
+    setId(id) {this.#id = id;}
 
     getCategory() {return this.#category;}
     setCategory(category) {this.#category = category;}
@@ -30,6 +35,7 @@ class ProductMst {
 
     getObject() {
         const obj = {
+            id: this.#id,
             category: this.#category,
             name: this.#name,
             price: this.#price,
@@ -62,12 +68,13 @@ class CommonApi {
 
 
 class RegisterApi {
-    createProductRequest(productMst) {
+    updateProduct(productMst) {
         let responseResult = null;
 
+        console.log(productMst);
         $.ajax({
             async: false,
-            type: "post",
+            type: "patch",
             url: "/api/admin/product",
             contentType: "application/json",
             data: JSON.stringify(productMst),
@@ -76,7 +83,7 @@ class RegisterApi {
                 responseResult = response.data;
             },
             error: (error) => {
-                alert("상품등록 실패");
+                alert("상품수정 실패");
             }
         });
 
@@ -139,6 +146,7 @@ class UpdateService {
         const url = decodeURIComponent(location.href);
         let params = url.substring( url.lastIndexOf('/')+1, url.length );
         UpdateApi.getInstance().getProductInfo(params);
+        RegisterService.getInstance().setUpdateButton(Number(params));
     }
 
     setProductInfo(productInfo) {
@@ -186,8 +194,30 @@ class RegisterService {
         })
     }
 
+    setUpdateButton(id) {
+        const productInputs = document.querySelectorAll('.product-inputs');
+        const updateButton = document.querySelector(".regist-button");
+        updateButton.onclick = () => {
+                    const category = Number(productInputs[0].value);
+                    const name = productInputs[1].value;
+                    const price = Number(productInputs[2].value);
+                    const simpleInfo = productInputs[3].value;
+                    const detailInfo = productInputs[4].value;
+
+                    const productMst = new ProductMst(
+                        id,category, name, price, simpleInfo, detailInfo);
+
+                    const registerApi = new RegisterApi();
+                    console.log(productMst.getObject());
+                    if(registerApi.updateProduct(productMst.getObject())) {
+                         alert("상품 수정 완료");
+                         location.href = "/admin/products";
+                   }
+                };
+    }
 }
 window.addEventListener('load', () => {
     RegisterService.getInstance().getCategoryList();
+
     UpdateService.getInstance().getProductInfo();
 });

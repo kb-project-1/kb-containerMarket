@@ -88,4 +88,11 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
         ProductMst productMst = productManagementRepository.getProductMst(productId);
         return productMst.toDto();
     }
+
+    @Override
+    public void updateProductMst(ProductUpdateReqDto productUpdateReqDto) {
+        ProductMst productMst = productUpdateReqDto.toEntity();
+        if(productManagementRepository.updateProductMst(productMst) !=1)
+            throw new CustomInternalServerErrorException("상품 업데이트 오류");
+    }
 }

@@ -23,4 +23,7 @@ public interface ProductManagementService {
     public void deleteProductMst(int productId);
 
     public ProductMstRespDto getProductMst(int productId);
+
+    public void updateProductMst( ProductUpdateReqDto productUpdateReqDto);
+
 }

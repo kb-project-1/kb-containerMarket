@@ -10,6 +10,20 @@
         <result property="category_name" column="category_name"/>
     </resultMap>
 
+    <update id="updateProductMst" parameterType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+        update
+            pdt_mst
+        set
+            pdt_name = #{pdt_name},
+            category_id = #{category_id},
+            pdt_price = #{pdt_price},
+            pdt_simple_info = #{pdt_simple_info},
+            pdt_detail_info = #{pdt_detail_info},
+            update_date = now()
+        where
+            id = #{id}
+    </update>
+
 
     <select id="getCategoryList" resultMap="product_category">
         select

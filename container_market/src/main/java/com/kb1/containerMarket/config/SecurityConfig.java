@@ -1,6 +1,7 @@
 package com.kb1.containerMarket.config;
 
 import com.kb1.containerMarket.web.advice.AuthFailureHandler;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,11 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableWebSecurity
+@RequiredArgsConstructor
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PrincipalOauth2Service principalOauth2Service;
-
+    
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

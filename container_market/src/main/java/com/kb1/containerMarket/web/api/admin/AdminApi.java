@@ -63,4 +63,10 @@ public class AdminApi {
         productManagementService.deleteProductMst(productId);
         return ResponseEntity.ok().body(new CMRespDto<>("Delete Successfully", true));
     }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<?> getProductMst(@PathVariable int productId) {
+
+        return ResponseEntity.ok().body(new CMRespDto<>("Get Successfully", productManagementService.getProductMst(productId)));
+    }
 }

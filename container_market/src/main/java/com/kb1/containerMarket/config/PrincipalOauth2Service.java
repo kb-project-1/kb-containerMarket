@@ -47,18 +47,19 @@ public class PrincipalOauth2Service extends DefaultOAuth2UserService {
 
         if(provider.equalsIgnoreCase("google")) {
             oauth2Attributes = attributes;
+            username = provider + "_" + oauth2Attributes.get("sub");
         } else if(provider.equalsIgnoreCase("naver")) {
             oauth2Attributes = (Map<String, Object>) attributes.get("response");
+            username = provider + "_" + oauth2Attributes.get("id");
         }
-
-        username = (String)oauth2Attributes.get("username");
 
         member = memberRepository.findMemberByUsername(username);
 
         if(member == null) {
             // 회원가입
             member = Member.builder()
-                    .email(username)
+                    .username(username)
+                    .email((String)oauth2Attributes.get("email"))
                     .password(new BCryptPasswordEncoder().encode(UUID.randomUUID().toString()))
                     .name((String) oauth2Attributes.get("name"))
                     .provider(provider)

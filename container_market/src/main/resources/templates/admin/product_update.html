@@ -3,7 +3,6 @@
 <head th:replace="/fragments/admin/admin_head :: head"/>
 <head>
   <link rel="stylesheet" href="/static/css/admin/register.css">
-  <script defer src="/static/js/admin/product_registration.js"></script>
   <script defer src="/static/js/admin/product_update.js"></script>
 </head>
 <body>
@@ -22,7 +21,7 @@
             <input type="text" class="product-inputs" placeholder="상품명">
             <input type="number" min="100" step="100" class="product-inputs" placeholder="가격">
           </div>
-          <div class="regist-info regist-info-invisible">
+          <div class="regist-info">
             <textarea class="product-inputs" placeholder="간단 설명"></textarea>
             <textarea class="product-inputs" placeholder="상세 설명"></textarea>
           </div>

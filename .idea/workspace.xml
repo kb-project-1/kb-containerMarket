@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="243f5872-30fc-4a4c-82ef-2629021cc7b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/ContainerMarketApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/aop/LogAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/aop/ValidationAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/aop/annotation/LogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/aop/annotation/ValidAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/exception/CustomInternalServerErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/exception/CustomValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/repository/admin/ProductManagementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/security/PrincipalDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/service/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/service/PrincipalDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/service/admin/ProductManagementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/service/admin/ProductManagementServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/advice/AuthFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/advice/RestControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/api/MemberApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/api/admin/ProductAdminApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/controller/MyShopController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/controller/admin/ProductManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/controller/validation/ValidationGroups.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/controller/validation/ValidationSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/domain/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/domain/ProductCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/dto/CMRespDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/dto/JoinReqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/dto/admin/CategoryResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/java/com/kb1/containerMarket/web/dto/admin/ProductRegisterReqDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/mappers/admin_product.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/mappers/member.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/admin/aside.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/admin/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/mainpage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/memberJoin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/myShopIndex.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/css/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/images/ico_access.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/images/info_best.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/images/kakao_btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/images/product_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/images/site_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/js/admin/product_registration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/js/member/join.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/admin/product_registration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/fragments/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/fragments/nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/member/join.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/main/resources/templates/member/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/container_market/src/test/java/com/kb1/containerMarket/ContainerMarketApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GZCa83pjKKVRzrhRSnTDFFGRyx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/junil/jiwon/web-basic/kb1/springboot/kb-containerMarket-dohyun/container_market"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="243f5872-30fc-4a4c-82ef-2629021cc7b7" name="Changes" comment="" />
+      <created>1666586779308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666586779308</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

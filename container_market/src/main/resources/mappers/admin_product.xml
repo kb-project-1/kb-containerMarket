@@ -98,6 +98,18 @@
         and size_id = #{size_id}
         and pdt_color = #{pdt_color}
     </select>
+    <select id="getProductMst" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+        select
+            pm.id,
+            pm.pdt_name,
+            pm.category_id,
+            pm.pdt_price,
+            pm.pdt_simple_info,
+            pm.pdt_detail_info
+        from
+            pdt_mst pm
+        where pm.id = #{productId}
+    </select>
     <delete id="deleteProductMst" parameterType="int">
         delete
             from

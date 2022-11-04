@@ -2,11 +2,9 @@ package com.kb1.containerMarket.repository.admin;
 
 import com.kb1.containerMarket.web.domain.Product;
 import com.kb1.containerMarket.web.domain.ProductCategory;
-import com.kb1.containerMarket.web.domain.admin.AdminProducts;
-import com.kb1.containerMarket.web.domain.admin.ProductDetail;
-import com.kb1.containerMarket.web.domain.admin.ProductOption;
-import com.kb1.containerMarket.web.domain.admin.ProductSize;
+import com.kb1.containerMarket.web.domain.admin.*;
 import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
+import com.kb1.containerMarket.web.dto.admin.ProductMstRespDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -26,7 +24,9 @@ public interface ProductManagementRepository {
 
     public int saveProductDtl(ProductDetail productDetail);
 
-    int findProductColor(ProductDetail productDetail);
+    public int findProductColor(ProductDetail productDetail);
 
-    int deleteProductMst(int pdt_id);
+    public int deleteProductMst(int pdt_id);
+
+    public ProductMst getProductMst(int productId);
 }

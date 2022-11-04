@@ -5,6 +5,7 @@ import com.kb1.containerMarket.exception.CustomValidationException;
 import com.kb1.containerMarket.repository.admin.ProductManagementRepository;
 import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.admin.AdminProducts;
+import com.kb1.containerMarket.web.domain.admin.ProductMst;
 import com.kb1.containerMarket.web.domain.admin.ProductOption;
 import com.kb1.containerMarket.web.domain.admin.ProductSize;
 import com.kb1.containerMarket.web.dto.admin.*;
@@ -80,5 +81,11 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
         if(productManagementRepository.deleteProductMst(productId) == 0) {
             throw new CustomInternalServerErrorException("상품 삭제 오류");
         }
+    }
+
+    @Override
+    public ProductMstRespDto getProductMst(int productId) {
+        ProductMst productMst = productManagementRepository.getProductMst(productId);
+        return productMst.toDto();
     }
 }

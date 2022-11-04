@@ -1,6 +1,7 @@
 package com.kb1.containerMarket.service.admin;
 
 
+import com.kb1.containerMarket.web.dto.admin.ProductMstRespDto;
 import com.kb1.containerMarket.web.dto.admin.*;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface ProductManagementService {
     public void checkDuplicatedColor(ProductDtlRegisterDto productDtlRegisterDto) throws Exception;
 
     public void deleteProductMst(int productId);
+
+    public ProductMstRespDto getProductMst(int productId);
 }

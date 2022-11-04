@@ -84,88 +84,75 @@ class RegisterApi {
     }
 }
 
-class RegisterEventService {
-    #categorySelectObj;
-    #nameInputObj;
-    #priceInputObj;
-    #registButtonObj;
-    #infoTextareaObjs;
+class UpdateApi {
+
+    static #instance = null;
 
     constructor() {
-        this.#categorySelectObj = document.querySelectorAll(".product-inputs")[0];
-        this.#nameInputObj = document.querySelectorAll(".product-inputs")[1];
-        this.#priceInputObj = document.querySelectorAll(".product-inputs")[2];
-        this.#registButtonObj = document.querySelector(".regist-button");
-        this.#infoTextareaObjs = document.querySelectorAll(".product-inputs");
 
-        this.init();
-
-        this.addCategorySelectEvent();
-        this.addNameInputEvent();
-        this.addPriceInputEvent();
-        this.addRegistButtonEvent();
     }
 
-    init() {
-        this.#nameInputObj.disabled = true;
-        this.#priceInputObj.disabled = true;
-        this.#registButtonObj.disabled = true;
-    }
-
-    addCategorySelectEvent() {
-        this.#categorySelectObj.onchange = () => {
-            if(this.#categorySelectObj.value != "none") {
-                this.#nameInputObj.disabled = false;
-            }else {
-                this.#nameInputObj.disabled = true;
-            }
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new UpdateApi();
         }
+        return this.#instance;
     }
 
-    addNameInputEvent() {
-        this.#nameInputObj.onkeyup = () => {
-            if(this.#nameInputObj.value.length != 0) {
-                this.#priceInputObj.disabled = false;
-            }else {
-                this.#priceInputObj.disabled = true;
-            }
+    getProductInfo(params) {
+        let responseData = null;
+        $.ajax({
+                async: false,
+                type: "get",
+                url: "/api/admin/product/"+params,
+                dataType : "json",
+                success: (response) => {
+                    responseData = response.data;
+                    UpdateService.getInstance().setProductInfo(responseData);
+                },
+                error: (error) => {
+                     alert("오류가 발생했습니다.");
+                }
+            });
+    }
+}
+
+class UpdateService {
+
+    static #instance = null;
+
+    constructor() {
+
+    }
+
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new UpdateService();
         }
+        return this.#instance;
     }
 
-    addPriceInputEvent() {
-        this.#priceInputObj.onkeyup = () => {
-            const registInfo = document.querySelector(".regist-info");
+    getProductInfo() {
+        const param = new Array();
 
-            if(this.#priceInputObj.value.length != 0) {
-                this.#registButtonObj.disabled = false;
-                registInfo.classList.remove("regist-info-invisible");
-
-            }else {
-                this.#registButtonObj.disabled = true;
-                registInfo.classList.add("regist-info-invisible");
-
-            }
-        }
+            // 현재 페이지의 url
+        const url = decodeURIComponent(location.href);
+        let params = url.substring( url.lastIndexOf('/')+1, url.length );
+        UpdateApi.getInstance().getProductInfo(params);
     }
 
-    addRegistButtonEvent() {
-        this.#registButtonObj.onclick = () => {
-            const category = this.#categorySelectObj.value;
-            const name = this.#nameInputObj.value;
-            const price = this.#priceInputObj.value;
-            const simpleInfo = this.#infoTextareaObjs[3].value;
-            const detailInfo = this.#infoTextareaObjs[4].value;
+    setProductInfo(productInfo) {
+        console.log(productInfo);
+        const productInputs = document.querySelectorAll('.product-inputs');
+        productInputs[0].options[productInfo.categoryId].selected = true;
+        productInputs[1].value = productInfo.productName;
+        productInputs[2].value = productInfo.productPrice;
+        productInputs[3].value = productInfo.simpleInfo;
+        productInputs[4].value = productInfo.detailInfo;
 
-            const productMst = new ProductMst(
-                category, name, price, simpleInfo, detailInfo);
-
-            const registerApi = new RegisterApi();
-            if(registerApi.createProductRequest(productMst.getObject())) {
-                 alert("상품 등록 완료");
-                 location.reload();
-           }
-        }
     }
+
+
 }
 
 class RegisterService {
@@ -199,13 +186,8 @@ class RegisterService {
         })
     }
 
-    setRegisterHeaderEvent() {
-        new RegisterEventService();
-    }
-
 }
-
 window.addEventListener('load', () => {
     RegisterService.getInstance().getCategoryList();
-    RegisterService.getInstance().setRegisterHeaderEvent();
+    UpdateService.getInstance().getProductInfo();
 });

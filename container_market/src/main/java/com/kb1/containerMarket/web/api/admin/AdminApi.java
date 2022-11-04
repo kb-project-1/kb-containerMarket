@@ -6,6 +6,7 @@ import com.kb1.containerMarket.service.admin.ProductManagementService;
 import com.kb1.containerMarket.web.dto.CMRespDto;
 import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
 import com.kb1.containerMarket.web.dto.admin.ProductRegisterReqDto;
+import com.kb1.containerMarket.web.dto.admin.ProductUpdateReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -68,5 +69,11 @@ public class AdminApi {
     public ResponseEntity<?> getProductMst(@PathVariable int productId) {
 
         return ResponseEntity.ok().body(new CMRespDto<>("Get Successfully", productManagementService.getProductMst(productId)));
+    }
+
+    @PatchMapping("/product")
+    public ResponseEntity<?> updateProductMst(@RequestBody  ProductUpdateReqDto productUpdateReqDto) {
+        productManagementService.updateProductMst(productUpdateReqDto);
+        return ResponseEntity.ok().body(new CMRespDto<>("Update Successfully", true));
     }
 }

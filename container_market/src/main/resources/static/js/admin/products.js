@@ -156,6 +156,8 @@ class ProductsService {
 
         new PageHandler(this.pageHandler.page, this.pageHandler.totalCount);
         this.getProducts(responseData);
+        ProductsService.getInstance().setDeleteButton();
+        ProductsService.getInstance().setUpdateButton();
     }
 
     getProducts(responseData) {

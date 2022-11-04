@@ -29,4 +29,6 @@ public interface ProductManagementRepository {
     public int deleteProductMst(int pdt_id);
 
     public ProductMst getProductMst(int productId);
+
+    public int updateProductMst(ProductMst productMst);
 }

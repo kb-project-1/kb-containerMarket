@@ -14,9 +14,10 @@ public class OrderList {
     private String status2;
 
     public OrderDto toDto(){
+        image_src = image_src == null ? "noimage.png" : image_src;
         return OrderDto.builder()
                 .order_date(order_date)
-                .image_src("image_src")
+                .image_src(image_src)
                 .name(name)
                 .count(count)
                 .price(price)

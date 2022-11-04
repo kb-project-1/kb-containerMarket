@@ -37,7 +37,7 @@ function loadList(list) {
         center.innerHTML += `
             <tr>
                 <td>${pDate}</td>
-                <td>${data.image_src}</td>
+                <td><div class="td_img"><img src="/static/upload/product/${data.image_src}"></div></td>
                 <td>${data.name}</td>
                 <td>${data.count}</td>
                 <td>${pPrice}</td>

@@ -7,6 +7,7 @@
     <select id="getOrderListAll" parameterType="String" resultType="com.kb1.containerMarket.web.domain.OrderList">
         select
             od.order_date,
+            pim.origin_name as image_src,
             pm.pdt_name as name,
             od.count,
             pm.pdt_price as price,
@@ -15,6 +16,7 @@
             order_dtl od
             left outer join pdt_mst pm on (od.productId = pm.id)
             left outer join order_detail_mst odm on (od.status = odm.id)
+            left outer join pdt_image_mst pim on (od.productId = pim.pdt_id)
         where
             username = #{username}
     </select>

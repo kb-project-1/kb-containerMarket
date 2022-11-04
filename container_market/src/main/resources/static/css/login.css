@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+#contents{
+    width: 80%;
+    float: right;
+}
+
+.title-area {
+    min-height: 30px;
+    margin: 40px 0 20px;
+    border-bottom: 0px solid #e8e8e8;
+}
+
+.login-subtitle {
+    display: inline-block;
+    color: #000;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.0px;
+}
+
+.login-area{
+    padding: 49px 39px;
+}
+
+.login-current{
+    width: 370px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 0 0 9px;
+}
+
+form input {
+    overflow: hidden;
+    display: block;
+    width: 250px;
+    height: 28px;
+    margin: 0 0 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    color: #8F8F91;
+    line-height: 28px;
+    padding: 2px 2px 2px 7px;
+}
+
+.login-button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100px;
+    height: 76px;
+    line-height: 70px;
+    border-radius: 0px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2e2e2e;
+    border: 1px solid #d7d5d5;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    cursor: pointer;
+}
+
+.security{
+    padding: 0 0 0 5px;
+    margin: 12px 0;
+    color: #757575;
+}
+
+.link-area{
+        padding: 0 0 30px;
+        border-top: 1px solid #e9e9e9;
+        margin-top: 25px;
+    }
+
+.link-area ul{
+    overflow: hidden;
+    padding: 20px 55px 5px;
+    margin: 0;
+    border: 0;
+}
+
+.link-area li{
+    float: left;
+    padding: 0 9px 0 13px;
+}
+
+.link-area li:after{
+    position: relative;
+    top: 2px;
+    right: -10px;
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    border-right: 1px solid #d9d9d9;
+}
+
+.link-area li:last-child:after{
+    border-right: none;
+}

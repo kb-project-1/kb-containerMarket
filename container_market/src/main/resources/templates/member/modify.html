@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"/>
+<head>
+    <link rel="stylesheet" href="/static/css/memberModify.css">
+</head>
+<body>
+<div id="container">
+    <header th:replace="/fragments/header :: header"/>
+    <main id="main">
+        <nav th:replace="/fragments/nav :: nav"/>
+        <div id="content">
+            <!-- 들어올 Body -->
+            <form id="editForm" method="post" action="/api/member/modify">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>아이디</th>
+                        <td>
+                            <input type="text" id="member_id" name="member_id">
+                            (영문소문자/숫자, 4~16자)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td>
+                            <input type="password" id="passwd" name="passwd">
+                            (영문 대소문자/숫자/특수문자 포함, 10자~16자)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td>
+                            <input type="password" id="user_passwd_confirm" name="user_passwd_confirm">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td>
+                            <input type="text" id="name" name="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>휴대전화</th>
+                        <td>
+                            <select id="mobile1" name="mobile[]">
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                            </select>
+                            -
+                            <input id="mobile2" name="mobile[]" maxlength="4" type="text">
+                            -
+                            <input id="mobile3" name="mobile[]" maxlength="4" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td><input id="email" name="email" type="text"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="div-buttons">
+                    <button type="button" id="submit">회원정보수정</button>
+                    <button type="button" id="cancel">취소</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</div>
+<script src="/static/js/member/modify.js"></script>
+</body>
+</html>

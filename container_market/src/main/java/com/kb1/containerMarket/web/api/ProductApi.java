@@ -22,7 +22,6 @@ public class ProductApi {
         return ResponseEntity.ok(new CMRespDto<>("successfully",productService.getProducts(category,page)));
     }
     @GetMapping("/product/{pdtId}")
-
     public ResponseEntity<?> getProduct(@PathVariable int pdtId) throws Exception {
         return ResponseEntity.ok(new CMRespDto<>("successfully",productService.getProduct(pdtId)));
     }

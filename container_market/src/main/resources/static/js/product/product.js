@@ -1,4 +1,3 @@
-
 class ProductApi {
     static #instance = null;
     static getInstance() {
@@ -34,6 +33,9 @@ class ProductApi {
 class ProductDetail{
     constructor(){
         const responseData = ProductApi.getInstance().getProductData();
+        this.loadProductDetail(responseData);
+        this.loadProductColors(responseData);
+        this.loadProductSizeName(responseData);
     }
 
     loadProductDetail(responseData){
@@ -41,15 +43,49 @@ class ProductDetail{
         document.querySelector(".simple-info").textContent = responseData.simpleInfo;
         document.querySelector(".p-price").textContent = responseData.pdtPrice;
         document.querySelector(".content-img").textContent = responseData.detailInfo;
-    }    
+    }
 
     loadProductColors(responseData){
         const productColors = document.querySelector(".color-box");
         productColors.innerHTML = ``;
 
-        Object.keys(responseData.pdtColor).forEach(color => {
+        Object.keys(responseData.pdtColors).forEach(color => {
             productColors.innerHTML += `<option value="${color}">${color}</option>`
         })
     }
+
+    // loadProductPrice(responseData){
+    //     const productPrice = document.querySelector(".p-price")
+    //     Object.entries(responseData.pdtColors).foreach(entry => {
+    //         if(productColors.value == entry[0]){
+    //             entry[1].forEach(value => {
+    //                 productsizes.innerHTML =+ `
+    //                 <td class="p-price">${pdtStock}</td>
+    //                 `;
+    //             })
+                
+    //         }
+    //     })
+    // }
+    // 수량 , 금액 넣어야함
+
+    loadProductSizes(responseData){
+        const productsizes = document.querySelector(".size-box");
+        Object.entries(responseData.pdtColors).foreach(entry => {
+            if(productColors.value == entry[0]){
+                entry[1].forEach(value => {
+                    productsizes.innerHTML =+ `
+                    <option type="hidden" id="pdtDtlId" value="${value.pdtDtlId}">
+                    <option id="product-size-${value.sizeName}"selected>${value.sizeName}</option>
+                    `;
+                })
+                
+            }
+        })
+        this.addColorsSelectEvent(responseData);
+    }
 }
 
+window.onload = () => {
+    new ProductDetail();
+}

@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductService {
     List<ProductsRespDto> getProducts(String category, int page) throws Exception;
     public ProductRespDto getProduct(int pdtId) throws Exception;
+
 }

@@ -116,8 +116,19 @@ class ProductsService{
             </li>
             `;
         })
-
+        this.addProductListEvent(responseData);
     }
+// 안됨
+    addProductListEvent(responseData) {
+            const collectionProducts = document.querySelectorAll(".product");
+
+            collectionProducts.forEach((product, index) => {
+                product.onclick = () => {
+                    location.href = "/product/" + responseData[index].productId;
+                }
+            });
+
+        }
 }
 
 function getLoginSession() {

@@ -1,8 +1,11 @@
 package com.kb1.containerMarket.service;
 
+import com.kb1.containerMarket.exception.CustomValidationException;
 import com.kb1.containerMarket.repository.ProductRepository;
 import com.kb1.containerMarket.service.ProductService;
+import com.kb1.containerMarket.web.domain.Product;
 import com.kb1.containerMarket.web.domain.Products;
+import com.kb1.containerMarket.web.dto.ProductRespDto;
 import com.kb1.containerMarket.web.dto.ProductsRespDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,5 +35,20 @@ public class ProductServiceImpl implements ProductService {
             products.add(product.toDto());
         });
         return products;
+    }
+
+    @Override
+    public ProductRespDto getProduct(int pdtId) throws Exception {
+        Product product = productRepository.getProduct(pdtId);
+        ProductRespDto dto = ProductRespDto.builder()
+                .pdtId(product.getId())
+                .pdtName(product.getPdt_name())
+                .pdtPrice(product.getPdt_price())
+                .simpleInfo(product.getPdt_simple_info())
+                .detailInfo(product.getPdt_detail_info())
+                .pdtColor(product.getPdt_color())
+                .sizeName(product.getPdt_size_name())
+                .build();
+        return dto;
     }
 }

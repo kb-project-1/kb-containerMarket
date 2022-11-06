@@ -13,6 +13,13 @@ public class ProductsController {
         return "/index";
     }
 
-    @GetMapping("/product/product")
-    public String loadProduct(){ return "/product/product"; }
+    @GetMapping("/product/{pdtId}")
+    public String loadProduct(@PathVariable String pdtId) {
+        return "/product/product";
+    }
+
+    @GetMapping("/order")
+    public String loadPayment(){
+        return "/order/order";
+    }
 }

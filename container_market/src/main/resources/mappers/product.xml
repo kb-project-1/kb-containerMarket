@@ -4,7 +4,13 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.kb1.containerMarket.repository.ProductRepository">
-
+    <resultMap id="getProductMst" type="com.kb1.containerMarket.web.domain.Product">
+        <result property="id" column="pdt_id"></result>
+        <result property="pdt_name" column="pdt_name"></result>
+        <result property="pdt_price" column="pdt_price"></result>
+        <result property="pdt_simple_info" column="pdt_simple_info"></result>
+        <result property="pdt_detail_info" column="pdt_detail_info"></result>
+    </resultMap>
     <select id="getProducts" parameterType="hashmap" resultType="com.kb1.containerMarket.web.domain.Products">
         select
         pm.id,
@@ -29,5 +35,22 @@
         group by
         pm.id
         limit #{index}, 9
+    </select>
+
+    <select id="getProduct" resultMap="getProductMst">
+        SELECT
+            pm.id,
+            pm.pdt_name,
+            pm.pdt_price,
+            pm.pdt_simple_info,
+            pm.pdt_detail_info,
+            pd.pdt_color,
+            psm.size_name
+        FROM
+            pdt_mst pm
+            LEFT OUTER JOIN pdt_dtl pd ON(pd.pdt_id = pm.id)
+            LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = pd.id)
+        WHERE
+            pm.id
     </select>
 </mapper>

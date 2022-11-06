@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<link rel="stylesheet" href="/static/css/order.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="title-area">
+        <h1>주문/결제</h1>
+    </div>
+
+    <div class="order-area">
+            <!-- 공통 -->
+        <div class="title">
+            <h2>주문 정보</h2>
+        </div>
+        <div class="contents">
+            <table border="1" class="table">
+                <colgroup>
+                    <col>
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>주문자
+                            <span class="icon">필수</span>
+                        </th>
+                        <td><input class="inputTypeText" type="text"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일
+                            <span class="icon">필수</span>
+                        </th>
+                        <td>
+                            <div>
+                                <input type="text" class="email1">@
+                                <span>
+                                    <select class="email2">
+                                        <option value="" selected="selected">-이메일 선택-</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="hotmail.com">hotmail.com</option>
+                                        <option value="yahoo.com">yahoo.com</option>
+                                        <option value="empas.com">empas.com</option>
+                                        <option value="korea.com">korea.com</option>
+                                        <option value="dreamwiz.com">dreamwiz.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                    </select>
+
+                            </span>
+                            </div>
+                            <p class="help">이메일로 주문 처리 과정을 보내드립니다.<br>수신 가능한 이메일 주소를 입력해 주세요.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>일반전화
+                            <span class="icon">필수</span>
+                        </th>
+                        <td>
+                            <select class="number1">
+                                <option value="02">02</option>
+                                <option value="031">031</option>
+                                <option value="032">032</option>
+                                <option value="033">033</option>
+                                <option value="041">041</option>
+                                <option value="042">042</option>
+                                <option value="043">043</option>
+                                <option value="044">044</option>
+                                <option value="051">051</option>
+                                <option value="052">052</option>
+                                <option value="053">053</option>
+                                <option value="054">054</option>
+                                <option value="055">055</option>
+                                <option value="061">061</option>
+                                <option value="062">062</option>
+                                <option value="063">063</option>
+                                <option value="064">064</option>
+                                <option value="0502">0502</option>
+                                <option value="0503">0503</option>
+                                <option value="0504">0504</option>
+                                <option value="0505">0505</option>
+                                <option value="0506">0506</option>
+                                <option value="0507">0507</option>
+                                <option value="070">070</option>
+                                <option value="010">010</option>
+                                <option value="011">011</option>
+                                <option value="016">016</option>
+                                <option value="017">017</option>
+                                <option value="018">018</option>
+                                <option value="019">019</option>
+                                <option value="0508">0508</option>
+                            </select>-
+                            <input maxlength="4" size="4" type="text" class="number1">-
+                            <input maxlength="4" size="4"  type="text" class="number1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>휴대전화</th>
+                        <td>
+                            <select class="number1">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                            </select>-
+                            <input maxlength="4" size="4" type="text" class="number1">-
+                            <input maxlength="4" size="4" type="text" class="number1">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>주소
+                            <span class="icon">필수</span>
+                        </th>
+                        <td>
+                            <div class="address-items">
+                                <input type="text" class="address-zonecode" placeholder="우편번호" disabled>
+                                <button type="button" class="btn address-button">주소검색</button>
+                            </div>
+                            <div class="address-items">
+                                <input type="text" class="inputTypeText" placeholder="기본주소" disabled>
+                            </div>
+                            <input type="text" class="inputTypeText" placeholder="나머지 주소">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="title">
+            <h2>주문 상품</h2>
+        </div>
+        <div class="contents">
+            <div class="prd-box">
+                <div class="img"><a href="#"><img src="/static/images/product1.png"width="90" height="90"></a></div>
+                <div class="description">
+                    <strong> <a href="#" class="product-name">코지 린넨 셋업 자켓 / 3 컬러</a></strong>
+                    <ul class="info">
+                        <li title="옵션"><p class="option">[옵션: 블랙/M]</p></li>
+                        <li>수량: 1개</li>
+                        <li>
+                            <span id="">상품구매금액: 89,000원 </span>
+                            <span class="displaynone">()</span>
+                        </li>
+                        <li title="배송">[무료] / 기본배송 </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn-remove ">X</button>
+            </div>
+        </div>
+        <div class="title">
+            <h2>결제 정보</h2>
+        </div>
+        <div class="payment-info">
+           <div class="amount">
+                <div class="product-amount">
+                    <span class="product-s">주문상품</span>
+                    <span class="price-s">89,000</span>
+                </div>
+                <div class="total">
+                    <h3 class="heading">결제금액</h3>
+                    <strong>
+                        <span class="total-price">89,000</span>원</span>
+                    </strong>
+                </div>
+           </div>
+        </div>
+        <button class="btn2">
+            결제하기
+        </button>
+    </div>
+           
+    <!-- 
+        
+     -->
+    </div>
+</body>
+</html>

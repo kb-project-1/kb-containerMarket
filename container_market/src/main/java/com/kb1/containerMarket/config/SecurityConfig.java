@@ -25,10 +25,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.httpBasic().disable(); //기본화면
         http.authorizeRequests() //권한에 관련된 모든 요청
-                .antMatchers("/myshop/**") //이 주소로 요청이 들어오면
+                .antMatchers("/myShop/**") //이 주소로 요청이 들어오면
                 .authenticated()//인가를 받아라
-                .antMatchers("/admin/**")
-                .hasRole("ADMIN")
+//                .antMatchers("/admin/**")
+//                .hasRole("ADMIN")
                 .anyRequest()
                 .permitAll()
                 .and()

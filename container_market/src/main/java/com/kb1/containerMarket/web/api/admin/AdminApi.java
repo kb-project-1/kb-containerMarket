@@ -75,5 +75,6 @@ public class AdminApi {
     public ResponseEntity<?> updateProductMst(@RequestBody  ProductUpdateReqDto productUpdateReqDto) {
         productManagementService.updateProductMst(productUpdateReqDto);
         return ResponseEntity.ok().body(new CMRespDto<>("Update Successfully", true));
+
     }
 }

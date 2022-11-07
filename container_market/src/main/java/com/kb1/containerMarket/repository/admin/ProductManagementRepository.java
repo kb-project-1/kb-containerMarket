@@ -5,6 +5,7 @@ import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.admin.*;
 import com.kb1.containerMarket.web.dto.admin.ProductDtlRegisterDto;
 import com.kb1.containerMarket.web.dto.admin.ProductMstRespDto;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -31,4 +32,5 @@ public interface ProductManagementRepository {
     public ProductMst getProductMst(int productId);
 
     public int updateProductMst(ProductMst productMst);
+
 }

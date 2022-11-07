@@ -1,6 +1,5 @@
 package com.kb1.containerMarket.service.admin;
 
-
 import com.kb1.containerMarket.web.dto.admin.ProductMstRespDto;
 import com.kb1.containerMarket.web.dto.admin.*;
 
@@ -25,5 +24,6 @@ public interface ProductManagementService {
     public ProductMstRespDto getProductMst(int productId);
 
     public void updateProductMst( ProductUpdateReqDto productUpdateReqDto);
+
 
 }

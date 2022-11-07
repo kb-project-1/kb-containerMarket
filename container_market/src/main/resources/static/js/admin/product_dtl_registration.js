@@ -266,3 +266,4 @@ window.addEventListener('load', () => {
            Option.getInstance();
            ProductImgFile.getInstance();
 });
+

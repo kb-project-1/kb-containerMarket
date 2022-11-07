@@ -153,3 +153,4 @@ window.addEventListener('load', () => {
         ProductsService.getInstance().loadProducts();
         new pageScroll;
 });
+

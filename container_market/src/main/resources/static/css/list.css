@@ -4,6 +4,10 @@
     float: right;
 }
 
+table {
+    text-align: center;
+}
+
 .title-area {
     min-height: 30px;
     margin: 40px 0 20px;
@@ -71,8 +75,14 @@ tr {
 }
 th, td {
     border: 0;
-    vertical-align: top;
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
 }
+
+th:nth-child(1), td:nth-child(1) {
+    border-left: none;
+}
+
 th {
     height: 33.6px;
     display: table-cell;
@@ -157,4 +167,24 @@ tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
+}
+
+tbody td:nth-child(5) {
+    text-align: right;
+    padding-right: 6px;
+}
+
+.td_img {
+    display: flex;
+    text-align: center;
+
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.td_img img {
+    width: 100%;
+    height: 100%;
+
 }

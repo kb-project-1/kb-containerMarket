@@ -105,7 +105,7 @@ class ProductsService{
                 img = "noimage.png";
             }
 
-            console.log(img);
+//            console.log(img);
             product.innerHTML += `
             <li>
                 <div class="product-list">

@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener('load', () => {
     $.ajax({
         async: false,
         type: "get",
@@ -25,4 +25,4 @@ window.onload = () => {
             console.log(error.responseJSON);
         }
     });
-}
+});

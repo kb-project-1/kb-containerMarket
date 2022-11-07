@@ -84,20 +84,6 @@ class ProductDetail{
                 
             }
         });
-
-        
-
-        // Object.entries(responseData.pdtColors).foreach(entry => {
-        //     if(productColors.value == entry[0]){
-        //         entry[1].forEach(value => {
-        //             productSizes.innerHTML =+ `
-        //             <option type="hidden" id="pdtDtlId" value="${value.pdtDtlId}">
-        //             <option id="product-size-${value.sizeName}"selected>${value.sizeName}</option>
-        //             `;
-        //         })
-                
-        //     }
-        // })
     }
 }
 

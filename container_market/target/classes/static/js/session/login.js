@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
         url: "/api/session/getLogin",
         dataType: "json",
         success: (response) => {
-            console.log(response.data);
+//            console.log(response.data);
             const hrefLogin = document.querySelector(".session-login");
             const hrefJoin = document.querySelector(".session-join");
 

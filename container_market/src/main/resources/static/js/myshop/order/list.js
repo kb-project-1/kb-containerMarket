@@ -1,8 +1,4 @@
-//const testbtn = document.querySelector(".testbtn");
-
-
-window.addEventListener('onload',init());
-
+window.addEventListener('load',init());
 
 function init() {
     $.ajax({

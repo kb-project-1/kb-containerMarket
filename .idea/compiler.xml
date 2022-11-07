@@ -7,19 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="1조-컨테이너마켓" />
         <module name="kb-containerMarket" />
-        <module name="container_market" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="container_market" target="11" />
+      <module name="1조-컨테이너마켓" target="11" />
       <module name="kb-containerMarket" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="container_market" options="-parameters" />
-      <module name="kb-containerMarket" options="-parameters" />
+      <module name="1조-컨테이너마켓" options="-parameters" />
+      <module name="kb-containerMarket" options="" />
     </option>
   </component>
 </project>

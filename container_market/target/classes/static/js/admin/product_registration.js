@@ -204,7 +204,8 @@ class RegisterService {
     }
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
     RegisterService.getInstance().getCategoryList();
     RegisterService.getInstance().setRegisterHeaderEvent();
-}
+});
+

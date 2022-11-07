@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head"/>
+<head>
+    <link rel="stylesheet" href="/static/css/product.css">
+</head>
+<body>
+<div id="container">
+    <header th:replace="/fragments/header :: header"/>
+    <main id="main">
+        <nav th:replace="/fragments/nav :: nav"/>
+        <div id="warp">
+            <div class="contents">
+                <div class="dtl-con">
+                    <div class="img">
+                        <img src="/static/images/product1.png">
+                    </div>
+                    <div class="info">
+                        <div>
+                            <p class="p-name">코지 린넷 셋업 자켓 / 3 컬러</p>
+                            <div class="simple-info">
+
+                            </div>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>판매가</th>
+                                <td class="p-price"></td>
+                            </tr>
+                            <tr>
+                                <th>COLOR</th>
+                                <td>
+                                    <select name="색상" class="color-box">
+                                        <option value="" selected>- [필수] 옵션을 선택해 주세요 -</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>SIZE</th>
+                                <td>
+                                    <select name="사이즈" class="size-box">
+                                        <option id="product-size-" selected>- [필수] 옵션을 선택해 주세요 -</option>
+                                        <option value="S">S</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <!-- <div class="total-price">
+                            <strong>총 상품 금액</strong>
+                            "수량 : "
+                            <span class="total">
+                                <strong>
+                                    <em>0원</em>
+                                </strong> (0개)
+                            </span>
+                        </div> -->
+                        <div class="btn-box">
+                            <button class="btn-b" onclick="location.href= '/order'">BUY</button>
+                            <button>CART</button>
+                            <button>WISH</button>
+                        </div>                   
+        </div>
+                    </div>
+                </div>
+                <div class="dtl-info">
+                    <div class="menu">
+                        <ul class="menu-list">
+                            <li><a href="#">DETAIL INFO</a></li>
+                            <li><a href="#">CHICK IT</a></li>
+                            <li><a href="#">REVIEW</a></li>
+                            <li><a href="#">Q & A</a></li>
+                            <li><a href="#">관련상품</a></li>
+                        </ul>
+                    </div>
+                    <div class="content-imgs">
+                        <div class="content-img">
+                            <img src="/static/images/product1.png">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="/static/js/product/product.js"></script>
+</body>
+</html>

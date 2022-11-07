@@ -115,8 +115,19 @@ class ProductsService{
             </li>
             `;
         })
-
+        this.addProductListEvent(responseData);
     }
+
+    addProductListEvent(responseData) {
+            const collectionProducts = document.querySelectorAll(".product-list");
+
+            collectionProducts.forEach((product, index) => {
+                product.onclick = () => {
+                    location.href = "/product/" + responseData[index].productId;
+                }
+            });
+
+        }
 }
 
 function getLoginSession() {
@@ -148,8 +159,9 @@ function getLoginSession() {
     });
 }
 
-window.onload = () =>{
-    getLoginSession();
-    ProductsService.getInstance().loadProducts();
-    new pageScroll;
-}
+window.addEventListener('load', () => {
+        getLoginSession();
+        ProductsService.getInstance().loadProducts();
+        new pageScroll;
+});
+

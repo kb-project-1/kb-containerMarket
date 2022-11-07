@@ -101,3 +101,7 @@ form input {
 .link-area li:last-child:after{
     border-right: none;
 }
+
+.security img{
+    cursor: pointer;
+}

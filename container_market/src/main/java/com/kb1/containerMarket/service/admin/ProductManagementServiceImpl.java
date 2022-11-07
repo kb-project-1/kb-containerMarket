@@ -7,6 +7,7 @@ import com.kb1.containerMarket.repository.admin.ProductManagementRepository;
 import com.kb1.containerMarket.web.domain.ProductCategory;
 import com.kb1.containerMarket.web.domain.ProductImg;
 import com.kb1.containerMarket.web.domain.admin.AdminProducts;
+import com.kb1.containerMarket.web.domain.admin.ProductMst;
 import com.kb1.containerMarket.web.domain.admin.ProductOption;
 import com.kb1.containerMarket.web.domain.admin.ProductSize;
 import com.kb1.containerMarket.web.dto.admin.*;
@@ -42,7 +43,7 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
 
     @Override
     public void registerMst(ProductRegisterReqDto productRegisterReqDto) throws Exception {
-        if(productManagementRepository.saveProductMst(productRegisterReqDto.toEntity())==0) {
+        if (productManagementRepository.saveProductMst(productRegisterReqDto.toEntity()) == 0) {
             throw new CustomInternalServerErrorException("상품 등록 실패");
         }
     }
@@ -71,22 +72,22 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
 
     @Override
     public void registerDtl(ProductDtlRegisterDto productDtlRegisterDto) throws Exception {
-        if(productManagementRepository.saveProductDtl(productDtlRegisterDto.toEntity()) == 0)
+        if (productManagementRepository.saveProductDtl(productDtlRegisterDto.toEntity()) == 0)
             throw new CustomInternalServerErrorException("상품 등록 오류");
     }
 
     @Override
     public void checkDuplicatedColor(ProductDtlRegisterDto productDtlRegisterDto) throws Exception {
-        if(productManagementRepository.findProductColor(productDtlRegisterDto.toEntity() ) > 0) {
+        if (productManagementRepository.findProductColor(productDtlRegisterDto.toEntity()) > 0) {
             Map<String, String> errorMap = new HashMap<String, String>();
             errorMap.put("error", "이미 등록된 상품입니다.");
-            throw new CustomValidationException("Duplicated Error",errorMap);
+            throw new CustomValidationException("Duplicated Error", errorMap);
         }
     }
 
     @Override
     public void deleteProductMst(int productId) {
-        if(productManagementRepository.deleteProductMst(productId) == 0) {
+        if (productManagementRepository.deleteProductMst(productId) == 0) {
             throw new CustomInternalServerErrorException("상품 삭제 오류");
         }
     }
@@ -97,7 +98,7 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
     public void registerImg(ProductImgReqDto productImgReqDto) throws Exception {
         log.info("pdtId >>> " + productImgReqDto.getPdtId());
 
-        if(productImgReqDto.getFiles() == null) {
+        if (productImgReqDto.getFiles() == null) {
             Map<String, String> errorMap = new HashMap<String, String>();
             errorMap.put("error", "이미지를 선택하지 않았습니다.");
             throw new CustomValidationException("Img Error", errorMap);
@@ -110,7 +111,7 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
             String filePath = null;
 
             try {
-                if(!resource.exists()){
+                if (!resource.exists()) {
                     String tempPath = resourceLoader.getResource("classpath:static").getURI().toString();
                     tempPath = tempPath.substring(tempPath.indexOf("/") + 1);
 
@@ -144,5 +145,18 @@ public class ProductManagementServiceImpl implements  ProductManagementService {
         });
 
         productManagementRepository.saveProductImg(productImgs);
+    }
+
+    @Override
+    public ProductMstRespDto getProductMst(int productId) {
+        ProductMst productMst = productManagementRepository.getProductMst(productId);
+        return productMst.toDto();
+    }
+
+    @Override
+    public void updateProductMst(ProductUpdateReqDto productUpdateReqDto) {
+        ProductMst productMst = productUpdateReqDto.toEntity();
+        if (productManagementRepository.updateProductMst(productMst) != 1)
+            throw new CustomInternalServerErrorException("상품 업데이트 오류");
     }
 }

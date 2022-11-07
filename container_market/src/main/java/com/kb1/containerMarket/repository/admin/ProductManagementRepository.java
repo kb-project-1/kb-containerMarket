@@ -7,6 +7,7 @@ import com.kb1.containerMarket.web.domain.admin.AdminProducts;
 import com.kb1.containerMarket.web.domain.admin.ProductDetail;
 import com.kb1.containerMarket.web.domain.admin.ProductOption;
 import com.kb1.containerMarket.web.domain.admin.ProductSize;
+import com.kb1.containerMarket.web.domain.admin.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -26,9 +27,13 @@ public interface ProductManagementRepository {
 
     public int saveProductDtl(ProductDetail productDetail);
 
-    int findProductColor(ProductDetail productDetail);
+    public int findProductColor(ProductDetail productDetail);
 
-    int deleteProductMst(int pdt_id);
+    public int deleteProductMst(int pdt_id);
+
+    public ProductMst getProductMst(int productId);
+
+    public int updateProductMst(ProductMst productMst);
 
     public int saveProductImg(List<ProductImg> productImg) throws Exception;
 }

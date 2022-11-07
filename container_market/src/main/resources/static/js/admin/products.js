@@ -31,7 +31,6 @@ class ProductsApi {
 
     deleteProduct(productId) {
             let responseData = null;
-
             $.ajax({
                 async: false,
                 type: "delete",
@@ -45,6 +44,9 @@ class ProductsApi {
                      alert("오류가 발생했습니다.");
                 }
             });
+        }
+        submitProduct(productId) {
+        location.href="/admin/product/update/"+productId;
         }
 }
 
@@ -154,6 +156,8 @@ class ProductsService {
 
         new PageHandler(this.pageHandler.page, this.pageHandler.totalCount);
         this.getProducts(responseData);
+        ProductsService.getInstance().setDeleteButton();
+        ProductsService.getInstance().setUpdateButton();
     }
 
     getProducts(responseData) {
@@ -169,7 +173,7 @@ class ProductsService {
                                   <td>${product.productName}</td>
                                   <td>${product.productPrice}</td>
                                   <td><button type="button">보기</button></td>
-                                  <td><button type="button">수정</button></td>
+                                  <td><button type="button" class="update-button" value="${product.productId}">수정</button></td>
                                   <td><button type="button" class="delete-button" value="${product.productId}">삭제</button></td>
                                 </tr>
             `
@@ -187,9 +191,20 @@ class ProductsService {
             }
         })
     }
+    setUpdateButton() {
+        const deleteButtons = document.querySelectorAll(".update-button");
+        deleteButtons.forEach((button) => {
+            button.onclick = () => {
+                const productId = button.value;
+                ProductsApi.getInstance().submitProduct(productId);
+            }
+        })
+    }
 }
 
-window.onload = () => {
-      ProductsService.getInstance().loadProducts();
-      ProductsService.getInstance().setDeleteButton();
-}
+window.addEventListener('load', () => {
+    ProductsService.getInstance().loadProducts();
+    ProductsService.getInstance().setDeleteButton();
+    ProductsService.getInstance().setUpdateButton();
+});
+

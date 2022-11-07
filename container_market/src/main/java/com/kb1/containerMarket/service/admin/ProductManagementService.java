@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.service.admin;
 
-
+import com.kb1.containerMarket.web.dto.admin.ProductMstRespDto;
 import com.kb1.containerMarket.web.dto.admin.*;
 
 import java.util.List;
@@ -22,4 +22,8 @@ public interface ProductManagementService {
     public void deleteProductMst(int productId);
 
     public void registerImg(ProductImgReqDto productImgReqDto) throws Exception;
+    public ProductMstRespDto getProductMst(int productId);
+
+    public void updateProductMst( ProductUpdateReqDto productUpdateReqDto);
+
 }

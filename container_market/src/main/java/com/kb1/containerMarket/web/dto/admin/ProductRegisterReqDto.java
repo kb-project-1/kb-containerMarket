@@ -1,10 +1,9 @@
 package com.kb1.containerMarket.web.dto.admin;
 
-import com.kb1.containerMarket.web.domain.Product;
+import com.kb1.containerMarket.repository.domain.Product;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Pattern;
 
 @Data
 public class ProductRegisterReqDto {

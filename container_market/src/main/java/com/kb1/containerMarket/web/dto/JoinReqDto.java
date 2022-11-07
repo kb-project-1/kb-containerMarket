@@ -1,7 +1,7 @@
 package com.kb1.containerMarket.web.dto;
 
 import com.kb1.containerMarket.web.controller.validation.ValidationGroups;
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import lombok.Data;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

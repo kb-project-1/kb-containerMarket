@@ -1,4 +1,4 @@
-package com.kb1.containerMarket.web.domain.admin;
+package com.kb1.containerMarket.repository.domain.admin;
 
 import com.kb1.containerMarket.web.dto.admin.ProductOptionRespDto;
 import lombok.AllArgsConstructor;

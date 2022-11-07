@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.security;
 
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

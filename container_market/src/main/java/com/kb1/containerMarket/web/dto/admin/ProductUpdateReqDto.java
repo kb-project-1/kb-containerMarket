@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.web.dto.admin;
 
-import com.kb1.containerMarket.web.domain.admin.ProductMst;
+import com.kb1.containerMarket.repository.domain.admin.ProductMst;
 import lombok.Builder;
 import lombok.Data;
 

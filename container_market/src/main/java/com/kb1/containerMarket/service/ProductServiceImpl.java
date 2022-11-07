@@ -1,13 +1,7 @@
 package com.kb1.containerMarket.service;
 
 import com.kb1.containerMarket.repository.ProductRepository;
-import com.kb1.containerMarket.service.ProductService;
-import com.kb1.containerMarket.web.domain.Products;
-import com.kb1.containerMarket.exception.CustomValidationException;
-import com.kb1.containerMarket.repository.ProductRepository;
-import com.kb1.containerMarket.service.ProductService;
-import com.kb1.containerMarket.web.domain.Product;
-import com.kb1.containerMarket.web.domain.Products;
+import com.kb1.containerMarket.repository.domain.Product;
 import com.kb1.containerMarket.web.dto.ProductRespDto;
 import com.kb1.containerMarket.web.dto.ProductsRespDto;
 import lombok.RequiredArgsConstructor;

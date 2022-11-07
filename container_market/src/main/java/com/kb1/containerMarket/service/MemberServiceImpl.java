@@ -3,7 +3,7 @@ package com.kb1.containerMarket.service;
 import com.kb1.containerMarket.exception.CustomInternalServerErrorException;
 import com.kb1.containerMarket.exception.CustomValidationException;
 import com.kb1.containerMarket.repository.MemberRepository;
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import com.kb1.containerMarket.web.dto.JoinReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

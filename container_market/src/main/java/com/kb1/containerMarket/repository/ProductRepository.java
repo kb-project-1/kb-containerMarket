@@ -1,7 +1,7 @@
 package com.kb1.containerMarket.repository;
 
-import com.kb1.containerMarket.web.domain.Product;
-import com.kb1.containerMarket.web.domain.Products;
+import com.kb1.containerMarket.repository.domain.Product;
+import com.kb1.containerMarket.repository.domain.Products;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.service;
 
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import com.kb1.containerMarket.web.dto.JoinReqDto;
 
 public interface MemberService{

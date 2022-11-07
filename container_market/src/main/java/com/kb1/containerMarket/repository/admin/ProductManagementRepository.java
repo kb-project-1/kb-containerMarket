@@ -1,13 +1,9 @@
 package com.kb1.containerMarket.repository.admin;
 
-import com.kb1.containerMarket.web.domain.Product;
-import com.kb1.containerMarket.web.domain.ProductCategory;
-import com.kb1.containerMarket.web.domain.ProductImg;
-import com.kb1.containerMarket.web.domain.admin.AdminProducts;
-import com.kb1.containerMarket.web.domain.admin.ProductDetail;
-import com.kb1.containerMarket.web.domain.admin.ProductOption;
-import com.kb1.containerMarket.web.domain.admin.ProductSize;
-import com.kb1.containerMarket.web.domain.admin.*;
+import com.kb1.containerMarket.repository.domain.Product;
+import com.kb1.containerMarket.repository.domain.ProductCategory;
+import com.kb1.containerMarket.repository.domain.ProductImg;
+import com.kb1.containerMarket.repository.domain.admin.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

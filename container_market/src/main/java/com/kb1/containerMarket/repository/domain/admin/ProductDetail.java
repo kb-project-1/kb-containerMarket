@@ -1,17 +1,18 @@
-package com.kb1.containerMarket.web.domain;
+package com.kb1.containerMarket.repository.domain.admin;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class ProductImg {
+@Builder
+public class ProductDetail {
     private int id;
     private int pdt_id;
-    private String origin_name;
-    public  String save_name;
+    private int size_id;
+    private String pdt_color;
+    private int pdt_stock;
 }

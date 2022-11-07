@@ -1,7 +1,6 @@
 package com.kb1.containerMarket.service;
 
 import com.kb1.containerMarket.repository.MyshopRepository;
-import com.kb1.containerMarket.web.domain.OrderList;
 import com.kb1.containerMarket.web.dto.OrderDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

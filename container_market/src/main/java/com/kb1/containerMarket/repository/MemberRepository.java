@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.repository;
 
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

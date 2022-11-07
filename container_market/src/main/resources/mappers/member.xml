@@ -4,14 +4,14 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.kb1.containerMarket.repository.MemberRepository">
-    <resultMap id="role" type="com.kb1.containerMarket.web.domain.Role">
+    <resultMap id="role" type="com.kb1.containerMarket.repository.domain.Role">
         <result property="id" column="id"/>
         <result property="name" column="role_name"/>
         <result property="create_date" column="create_date"/>
         <result property="update_date" column="update_date"/>
     </resultMap>
 
-    <resultMap id="member" type="com.kb1.containerMarket.web.domain.Member">
+    <resultMap id="member" type="com.kb1.containerMarket.repository.domain.Member">
         <result property="id" column="id"/>
         <result property="username" column="username"/>
         <result property="password" column="password"/>
@@ -45,7 +45,7 @@
             mm.username = #{username}
     </select>
 
-    <insert id="saveMember" parameterType="com.kb1.containerMarket.web.domain.Member">
+    <insert id="saveMember" parameterType="com.kb1.containerMarket.repository.domain.Member">
         insert into
         member_mst
         values(
@@ -62,7 +62,7 @@
         )
     </insert>
 
-    <update id="updateUser" parameterType="com.kb1.containerMarket.web.domain.Member">
+    <update id="updateUser" parameterType="com.kb1.containerMarket.repository.domain.Member">
         update
             member_mst
         set
@@ -75,7 +75,7 @@
         where
             username = #{username}
     </update>
-    <update id="updateProvider" parameterType="com.kb1.containerMarket.web.domain.Member">
+    <update id="updateProvider" parameterType="com.kb1.containerMarket.repository.domain.Member">
         update
             member_mst
         set

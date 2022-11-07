@@ -43,7 +43,7 @@ function initInputs() {
     member_id.value = responseData.data.username;
     name.disalbed = true;
     name.value = responseData.data.name;
-    console.log(responseData.data.phone.slice(0,3));
+    console.log(responseData.dat);
     mobile1.value = responseData.data.phone.slice(0,3);
     if(responseData.data.phone.length < 11){
         mobile2.value = responseData.data.phone.slice(3,6);

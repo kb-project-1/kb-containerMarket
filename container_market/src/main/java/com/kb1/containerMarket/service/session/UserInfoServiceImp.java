@@ -1,7 +1,7 @@
 package com.kb1.containerMarket.service.session;
 
 import com.kb1.containerMarket.service.MemberService;
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import com.kb1.containerMarket.web.dto.session.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;

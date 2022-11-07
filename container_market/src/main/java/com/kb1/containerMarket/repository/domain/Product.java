@@ -1,4 +1,4 @@
-package com.kb1.containerMarket.web.domain;
+package com.kb1.containerMarket.repository.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

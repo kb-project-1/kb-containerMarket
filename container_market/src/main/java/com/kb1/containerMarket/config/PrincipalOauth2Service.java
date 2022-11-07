@@ -2,7 +2,7 @@ package com.kb1.containerMarket.config;
 
 import com.kb1.containerMarket.repository.MemberRepository;
 import com.kb1.containerMarket.security.PrincipalDetails;
-import com.kb1.containerMarket.web.domain.Member;
+import com.kb1.containerMarket.repository.domain.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

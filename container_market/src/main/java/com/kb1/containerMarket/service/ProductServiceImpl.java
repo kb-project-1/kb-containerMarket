@@ -61,10 +61,7 @@ public class ProductServiceImpl implements ProductService {
             pdtColors.get(dtl.getPdt_color()).add(pdtDtlIdAndSize);
         });
 
-<<<<<<< HEAD
         System.out.println("product.getSave_name() = " + product.getSave_name());
-=======
->>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
         ProductRespDto dto = ProductRespDto.builder()
                 .pdtId(product.getId())
                 .pdtName(product.getPdt_name())
@@ -72,10 +69,7 @@ public class ProductServiceImpl implements ProductService {
                 .simpleInfo(product.getPdt_simple_info())
                 .detailInfo(product.getPdt_detail_info())
                 .pdtColors(pdtColors)
-<<<<<<< HEAD
                 .pdtImg(product.getSave_name())
-=======
->>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
                 .build();
         return dto;
     }

@@ -19,10 +19,7 @@
         <result property="pdt_price" column="pdt_price"></result>
         <result property="pdt_simple_info" column="pdt_simple_info"></result>
         <result property="pdt_detail_info" column="pdt_detail_info"></result>
-<<<<<<< HEAD
         <result property="save_name" column="save_name"></result>
-=======
->>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
         <collection property="pdt_dtls" javaType="list" resultMap="getProductDtl"></collection>
     </resultMap>
     <select id="getProducts" parameterType="hashmap" resultType="com.kb1.containerMarket.web.domain.Products">
@@ -61,21 +58,14 @@
             pd.size_id,
             psm.size_name,
             pd.pdt_color,
-<<<<<<< HEAD
             pd.pdt_stock,
             pim.save_name
-=======
-            pd.pdt_stock
->>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
         FROM
             pdt_mst pm
             LEFT OUTER JOIN pdt_dtl pd ON(pd.pdt_id = pm.id)
             LEFT OUTER JOIN pdt_size_dtl psd ON(psd.id = pd.size_id)
             LEFT OUTER JOIN pdt_size_mst psm ON(psm.id = psd.size_id)
-<<<<<<< HEAD
             LEFT OUTER join pdt_image_mst pim on(pim.pdt_id = pm.id)
-=======
->>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
         WHERE
             pm.id = ${pdtId}
     </select>

@@ -36,7 +36,10 @@ class ProductDetail{
         this.loadProductDetail(responseData);
         this.loadProductColors(responseData);
         this.loadProductSizes(responseData);
+<<<<<<< HEAD
         this.loadProductImages(responseData);
+=======
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
     }
 
     loadProductDetail(responseData){
@@ -56,6 +59,7 @@ class ProductDetail{
         })
     }
 
+<<<<<<< HEAD
 //     loadProductPrice(responseData){
 //         const productPrice = document.querySelector(".p-price")
 //         Object.entries(responseData.pdtColors).foreach(entry => {
@@ -77,6 +81,21 @@ class ProductDetail{
         img.innerHTML = `<img src="/static/upload/product/${responseData.pdtImg}">`;
         contentImg.innerHTML = `<img src="/static/upload/product/${responseData.pdtImg}">`;
         }
+=======
+     loadProductPrice(responseData){
+         const productPrice = document.querySelector(".p-price")
+         Object.entries(responseData.pdtColors).foreach(entry => {
+             if(productColors.value == entry[0]){
+                 entry[1].forEach(value => {
+                     productsizes.innerHTML =+ `
+                     <td class="p-price">${pdtStock}</td>
+                     `;
+                 })
+
+             }
+         })
+     }
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
     // 수량 , 금액 넣어야함
 
     loadProductSizes(responseData){
@@ -95,6 +114,7 @@ class ProductDetail{
         });
 
 
+<<<<<<< HEAD
 //         Object.entries(responseData.pdtColors).foreach(entry => {
 //             if(productColors.value == entry[0]){
 //                 entry[1].forEach(value => {
@@ -109,9 +129,28 @@ class ProductDetail{
     }
 
 
+=======
+
+         Object.entries(responseData.pdtColors).foreach(entry => {
+             if(productColors.value == entry[0]){
+                 entry[1].forEach(value => {
+                     productSizes.innerHTML =+ `
+                     <option type="hidden" id="pdtDtlId" value="${value.pdtDtlId}">
+                     <option id="product-size-${value.sizeName}"selected>${value.sizeName}</option>
+                     `;
+                 })
+
+             }
+         })
+    }
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
 }
 
 
 window.addEventListener('load', () => {
         new ProductDetail();
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234

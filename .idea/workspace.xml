@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="390da182-21c3-4f54-b8ca-cd135bb9c350" name="Changes" comment="관리자 페이지 프론트, 게시글 목록 불러오기" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="c90466bd95b6f3616ef9ae144ab62901134731cd" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2GIW37UDrz4lPdTKHZ4gRSgQHnR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ITPS/Documents/kb-containerMarket-희승/container_market"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kb1.containerMarket.web.dto.admin" />
+      <recent name="com.kb1.containerMarket.web.domain.admin" />
+      <recent name="com.kb1.containerMarket.repository.admin" />
+      <recent name="com.kb1.containerMarket.web.dto" />
+      <recent name="com.kb1.containerMarket.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ITPS\Desktop\IDH\git\kb-containerMarket\container_market\src\main\resources\templates\admin" />
+      <recent name="C:\Users\ITPS\Desktop\IDH\git\kb-containerMarket\container_market\src\main\resources\static\js\admin" />
+      <recent name="C:\Users\ITPS\Desktop\IDH\git\kb-project-20221012\container_market\src\main\resources\mappers" />
+      <recent name="C:\Users\ITPS\Desktop\IDH\git\kb-project-20221012\container_market\src\main\java\com\kb1\containerMarket\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ITPS\Desktop\IDH\git\kb-project-20221012\container_market\src\main\resources\static\css\admin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ContainerMarketApplication">
+    <configuration name="ContainerMarketApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.kb1.containerMarket.ContainerMarketApplication" />
+      <module name="kb-containerMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kb1.containerMarket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainerMarketApplication (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.kb1.containerMarket.ContainerMarketApplication" />
+      <module name="container_market" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kb1.containerMarket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainerMarketApplication (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.kb1.containerMarket.ContainerMarketApplication" />
+      <module name="kb-containerMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kb1.containerMarket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainerMarketApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.kb1.containerMarket.ContainerMarketApplication" />
+      <module name="kb-containerMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.kb1.containerMarket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="1조-컨테이너마켓" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="1조-컨테이너마켓" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ContainerMarketApplication" />
+      <item itemvalue="Application.ContainerMarketApplication (1)" />
+      <item itemvalue="Application.ContainerMarketApplication (2)" />
+      <item itemvalue="Application.ContainerMarketApplication (3)" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="390da182-21c3-4f54-b8ca-cd135bb9c350" name="Changes" comment="" />
+      <created>1666076376847</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666076376847</updated>
+    </task>
+    <task id="LOCAL-00001" summary="관리자 페이지 프론트, 게시글 목록 불러오기">
+      <created>1666255918803</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666255918803</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="관리자 페이지 프론트, 게시글 목록 불러오기" />
+    <option name="LAST_COMMIT_MESSAGE" value="관리자 페이지 프론트, 게시글 목록 불러오기" />
+  </component>
+</project>

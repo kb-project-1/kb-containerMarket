@@ -105,7 +105,11 @@ class ProductsService{
                 img = "noimage.png";
             }
 
+<<<<<<< HEAD
             console.log(img);
+=======
+//            console.log(img);
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
             product.innerHTML += `
             <li>
                 <div class="product-list">

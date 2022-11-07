@@ -17,5 +17,8 @@ public class ProductRespDto {
     private String simpleInfo;
     private String detailInfo;
     private Map<String, List<Map<String, Object>>> pdtColors;
+<<<<<<< HEAD
     private String pdtImg;
+=======
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
 }

@@ -19,5 +19,9 @@ public class Product {
     private String pdt_simple_info;
     private String pdt_detail_info;
     private List<ProductDetail> pdt_dtls;
+<<<<<<< HEAD
     private String save_name;
+=======
+
+>>>>>>> 38c3427d61cd7b49db874a73094fdbaf9519f234
 }

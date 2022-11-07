@@ -39,4 +39,22 @@ public class MemberServiceImpl implements MemberService{
         }
     }
 
+    @Override
+    public Member getMember(String username) throws Exception {
+        Member member = memberRepository.findMemberByUsername(username);
+
+        if(member != null){
+            return member;
+        }else{
+            return null;
+        }
+    }
+
+    @Override
+    public void updateUser(JoinReqDto joinReqDto) throws Exception {
+        int result = memberRepository.updateUser(joinReqDto.toEntity());
+        if (result == 0){
+            throw new CustomInternalServerErrorException("회원수정 중 문제가 발생하였습니다.");
+        }
+    }
 }

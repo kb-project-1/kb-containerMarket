@@ -1,0 +1,224 @@
+body{
+    width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 53px;
+    font-size: 16px;
+    font-family: Verdana,"맑은 고딕",Malgun Gothic,AppleSDGothicNeo,"돋움",Dotum;
+
+}
+input[type="text"]{
+    font-weight: inherit;
+    border: 1px solid #d7d5d5;
+    outline-style: none;
+    color: #333;
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+
+.icon {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: -2px 0 0;
+    vertical-align: middle;
+    text-indent: 150%;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+    background: url(//img.echosting.cafe24.com/skin/mobile/common/bg_required.png) no-repeat 0 0;
+    background-size: auto 6px;
+}
+
+.title-area{
+    position: fixed;
+    z-index: 9999;
+    width: 900px;
+
+    top: 0;
+
+    background: #d7d5d5;
+}
+
+.title-area h1{
+    padding: 0 42px;
+
+
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.order-area{
+    border: 1px solid #d7d5d5;
+    
+}
+
+.title{
+    border-bottom: 1px solid #d7d5d5;
+}
+
+.title h2{
+    margin-left: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.table{
+    width: 100%;
+    border: none;
+    color: #333;
+    
+}
+
+th,td{
+    border: none;
+    font-weight: 400;
+}
+
+.table th{
+    text-align: center;
+    width: 10%;
+}
+.table td{
+    width: 80%;
+}
+
+.table input{
+    height: 40px;
+    margin: 10px 0 0 0;
+}
+.table select{
+    height: 40px;
+    margin: 10px 0 0 0;
+}
+.inputTypeText{
+    width: 790px;
+    height: 40px;
+    margin: 10px 0;
+}
+.email1{
+    width: 45%;
+}
+.email2{
+    width: 45%;
+}
+.help{
+    font-size: 13px;
+    color: #999;
+    text-align: left;
+    line-height: 18px;
+}
+.number1{
+    width: 32%;
+}
+
+.btn{
+    height: 40px;
+    color: #1b1b1b;
+    border: 1px solid #bcbcbc;
+    background: #f0f0f0;
+}
+
+.prd-box{
+    display: inline-flex;
+}
+.product-name{
+    text-decoration: none;
+    color: #333;
+}
+.img{
+    margin: 10px;
+}
+.info{
+    padding: 0;
+}
+
+.info li{
+    font-size: 14px;
+    color: #666;
+}
+
+.btn-remove{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #b5b5b5;
+    border-radius: 2px;
+    margin: 0 0 0 4px;
+    background: #fff;
+    font-size: 10;
+    color: #b5b5b5;
+    left: 540px;
+    top: 5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.amount{
+    padding: 25px;
+}
+
+.product-amount{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.product-s{
+    margin-bottom: 10px;
+
+}
+
+.total{
+    
+    color: #333;
+    font-size: 18px;
+    border-radius: 2%;
+    background: #eff1f4;
+
+    display: flex;
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total-price{
+    
+    color: #508bed;
+    font-size: 17px;
+}
+
+
+
+.btn2{
+
+    height: 48px;
+
+    padding: 0 4px;
+    font-size: 18px;
+    font-weight: normal;
+    width: 100%;
+    color: #fff;
+    border: 1px solid #4a5164;
+    background: #4a5164;
+
+}

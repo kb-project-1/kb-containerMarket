@@ -1,4 +1,3 @@
-
 .regist-header {
     margin-bottom: 15px;
     position: relative;
@@ -53,8 +52,19 @@ textarea {
     width: 50%;
     height: 40px;
     color: white;
-    background-color: black;
+    background-color:black;
     position: relative;
     left:20%;
+}
+
+.btn2 {
+    left: 45%;
+    transform: translateX(-50%);
+
+}
+
+.btn2:hover {
+    background-color: #d7d5d5;
+    border: 1px solid #d7d5d5;
 }
 

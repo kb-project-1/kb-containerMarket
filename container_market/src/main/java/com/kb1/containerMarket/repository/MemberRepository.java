@@ -5,7 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface MemberRepository {
-
     public Member findMemberByUsername(String username) throws Exception;
     public int saveMember(Member member) throws Exception;
+    public int updateUser(Member member) throws Exception;
+    public void updateProvider(Member member);
 }

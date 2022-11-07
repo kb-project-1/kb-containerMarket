@@ -100,10 +100,16 @@ class ProductsService{
         const product = document.querySelector(".product");
 
         responseData.forEach(productList => {
+            let img = productList.mainImg;
+            if(img==null) {
+                img = "noimage.png";
+            }
+
+            console.log(img);
             product.innerHTML += `
             <li>
                 <div class="product-list">
-                    <div class="product-img"><img src="/static/images/product_img.png" alt="상품이미지"></div>
+                    <div class="product-img"><img src="/static/upload/product/${img}" alt="상품이미지"></div>
                     <div class="icon"><img src="/static/images/info_best.jpg" alt="상품이미지"></div>
                     <div class="product-info">
                         <ul>
@@ -115,11 +121,53 @@ class ProductsService{
             </li>
             `;
         })
-
+        this.addProductListEvent(responseData);
     }
+
+    addProductListEvent(responseData) {
+            const collectionProducts = document.querySelectorAll(".product-list");
+
+            collectionProducts.forEach((product, index) => {
+                product.onclick = () => {
+                    location.href = "/product/" + responseData[index].productId;
+                }
+            });
+
+        }
 }
 
-window.onload = () =>{
-    ProductsService.getInstance().loadProducts();
-    new pageScroll;
+function getLoginSession() {
+    $.ajax({
+        async: false,
+        type: "get",
+        url: "/api/session/getLogin",
+        dataType: "json",
+        success: (response) => {
+            console.log(response.data);
+            const hrefLogin = document.querySelector(".session-login");
+            const hrefJoin = document.querySelector(".session-join");
+
+            if(response.data == null){
+                hrefLogin.innerHTML = `<a href="/member/login">LOGIN</a>`;
+                hrefJoin.innerHTML = `<a href="/member/join">JOIN</a>`;
+            }else{
+                hrefLogin.innerHTML = `<a href="/logout">LOGOUT</a>`;
+                if(response.data.role_id == 3){
+                    hrefJoin.innerHTML = `<a href="/admin/products">ADMIN PAGE</a>`;
+                }else {
+                    hrefJoin.innerHTML = `<a href="/member/modify">MODIFY</a>`;
+                }
+            }
+        },
+        error: (error) => {
+            console.log(error.responseJSON);
+        }
+    });
 }
+
+window.addEventListener('load', () => {
+        getLoginSession();
+        ProductsService.getInstance().loadProducts();
+        new pageScroll;
+});
+

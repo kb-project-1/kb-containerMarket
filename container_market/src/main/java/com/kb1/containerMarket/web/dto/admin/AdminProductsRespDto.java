@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Builder
 @Data
-public class AdminProductsResponseDto {
+public class AdminProductsRespDto {
     private int productId;
     private String categoryName;
     private String productName;

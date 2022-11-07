@@ -1,6 +1,6 @@
 package com.kb1.containerMarket.web.domain.admin;
 
-import com.kb1.containerMarket.web.dto.admin.AdminProductsResponseDto;
+import com.kb1.containerMarket.web.dto.admin.AdminProductsRespDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +16,8 @@ public class AdminProducts {
     private int pdt_price;
     private int product_total_count;
 
-    public AdminProductsResponseDto toDto() {
-        return AdminProductsResponseDto.builder()
+    public AdminProductsRespDto toDto() {
+        return AdminProductsRespDto.builder()
                 .productId(id)
                 .categoryName(category_name)
                 .productName(pdt_name)

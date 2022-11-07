@@ -10,6 +10,19 @@
         <result property="category_name" column="category_name"/>
     </resultMap>
 
+    <update id="updateProductMst" parameterType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+        update
+            pdt_mst
+        set
+            pdt_name = #{pdt_name},
+            category_id = #{category_id},
+            pdt_price = #{pdt_price},
+            pdt_simple_info = #{pdt_simple_info},
+            pdt_detail_info = #{pdt_detail_info},
+            update_date = now()
+        where
+            id = #{id}
+    </update>
 
     <select id="getCategoryList" resultMap="product_category">
         select
@@ -49,4 +62,87 @@
                                  ) pm_cnt on (1=1)
         limit #{page}, 10
     </select>
+
+    <select id="getProductOptions" resultType="com.kb1.containerMarket.web.domain.admin.ProductOption">
+        select
+            pm.id as pdt_id,
+            pcm.category_name,
+            pm.pdt_name
+        from
+            pdt_mst pm
+        left outer join pdt_category_mst pcm on (pm.category_id = pcm.id)
+    </select>
+
+    <select id="getProductSize" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductSize">
+        select
+            psd.id as size_id,
+            psm.size_name
+        from pdt_mst pm
+            left outer join pdt_category_mst pcm on(pcm.id = pm.category_id)
+            left outer join pdt_size_dtl psd on(psd.group_id = pcm.group_id)
+            left outer join pdt_size_mst psm on(psm.id = psd.size_id)
+        where
+            pm.id = #{productId}
+    </select>
+
+    <insert id="saveProductDtl" parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail">
+        insert into
+        pdt_dtl
+        values(
+        0,
+        #{pdt_id},
+        #{size_id},
+        #{pdt_color},
+        #{pdt_stock},
+        now(),
+        now()
+        )
+    </insert>
+
+    <insert id="saveProductImg" parameterType="list">
+        insert into
+        pdt_image_mst
+        values
+        <foreach collection="list" item="img" separator=",">
+            (
+            0,
+            #{img.pdt_id},
+            #{img.origin_name},
+            #{img.save_name},
+            now(),
+            now()
+            )
+        </foreach>
+    </insert>
+    <select id="findProductColor"
+            parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail"
+            resultType="Integer">
+        select
+        count(*)
+        from
+        pdt_dtl
+        where
+        pdt_id = #{pdt_id}
+        and size_id = #{size_id}
+        and pdt_color = #{pdt_color}
+    </select>
+    <select id="getProductMst" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+        select
+            pm.id,
+            pm.pdt_name,
+            pm.category_id,
+            pm.pdt_price,
+            pm.pdt_simple_info,
+            pm.pdt_detail_info
+        from
+            pdt_mst pm
+        where pm.id = #{productId}
+    </select>
+    <delete id="deleteProductMst" parameterType="int">
+        delete
+            from
+        pdt_mst
+            where id = #{pdt_id}
+    </delete>
 </mapper>
+

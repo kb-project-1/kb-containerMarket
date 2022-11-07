@@ -2,7 +2,8 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/fragments/admin/admin_head :: head"/>
 <head>
-  <link rel="stylesheet" href="/static/css/admin/register.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/admin/register.css?ver=1">
+  <script defer src="/static/js/admin/product_registration.js"></script>
 </head>
 <body>
 <div id="container">
@@ -24,6 +25,7 @@
             <textarea class="product-inputs" placeholder="간단 설명"></textarea>
             <textarea class="product-inputs" placeholder="상세 설명"></textarea>
           </div>
+
           <button type="button" class="btn regist-button">등록하기</button>
         </section>
       </div>

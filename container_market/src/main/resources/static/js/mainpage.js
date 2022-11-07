@@ -27,6 +27,7 @@ class ProductsApi {
             },
             dataType: "json",
             success: (response) => {
+                console.log("ddddd")
                 responseData = response.data;
             },
             error: (error) => {
@@ -103,7 +104,7 @@ class ProductsService{
             product.innerHTML += `
             <li>
                 <div class="product-list">
-                    <div class="product-img"><img src="/static/images/product_img.png" alt="상품이미지"></div>
+                    <div class="product-img"><img src="/static/images/product_img.png"></div>
                     <div class="icon"><img src="/static/images/info_best.jpg" alt="상품이미지"></div>
                     <div class="product-info">
                         <ul>
@@ -115,8 +116,19 @@ class ProductsService{
             </li>
             `;
         })
-
+        this.addProductListEvent(responseData);
     }
+
+    addProductListEvent(responseData) {
+            const collectionProducts = document.querySelectorAll(".product-list");
+
+            collectionProducts.forEach((product, index) => {
+                product.onclick = () => {
+                    location.href = "/product/" + responseData[index].productId;
+                }
+            });
+
+        }
 }
 
 function getLoginSession() {

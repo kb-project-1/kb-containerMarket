@@ -17,4 +17,7 @@ public class MyShopController {
     public String myShopOrder() {
         return "/myShop/order/list";
     }
+
+    @GetMapping("/cart")
+    public String cart() {return "/myShop/cart";}
 }

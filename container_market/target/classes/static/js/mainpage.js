@@ -100,10 +100,16 @@ class ProductsService{
         const product = document.querySelector(".product");
 
         responseData.forEach(productList => {
+            let img = productList.mainImg;
+            if(img==null) {
+                img = "noimage.png";
+            }
+
+            console.log(img);
             product.innerHTML += `
             <li>
                 <div class="product-list">
-                    <div class="product-img"><img src="/static/images/product_img.png" alt="상품이미지"></div>
+                    <div class="product-img"><img src="/static/upload/product/${img}" alt="상품이미지"></div>
                     <div class="icon"><img src="/static/images/info_best.jpg" alt="상품이미지"></div>
                     <div class="product-info">
                         <ul>

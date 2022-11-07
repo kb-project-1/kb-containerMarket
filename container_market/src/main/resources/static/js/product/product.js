@@ -23,7 +23,7 @@ class ProductApi {
                 console.log(error);
             }
         });
-
+        console.log(responseData)
         return responseData;
 
     }
@@ -35,7 +35,7 @@ class ProductDetail{
         const responseData = ProductApi.getInstance().getProductData();
         this.loadProductDetail(responseData);
         this.loadProductColors(responseData);
-        this.loadProductSizeName(responseData);
+        this.loadProductSizes(responseData);
     }
 
     loadProductDetail(responseData){
@@ -43,6 +43,7 @@ class ProductDetail{
         document.querySelector(".simple-info").textContent = responseData.simpleInfo;
         document.querySelector(".p-price").textContent = responseData.pdtPrice;
         document.querySelector(".content-img").textContent = responseData.detailInfo;
+        document.querySelector(".size-box").textContent = responseData.pdtSize;
     }
 
     loadProductColors(responseData){
@@ -70,22 +71,37 @@ class ProductDetail{
     // 수량 , 금액 넣어야함
 
     loadProductSizes(responseData){
-        const productsizes = document.querySelector(".size-box");
-        Object.entries(responseData.pdtColors).foreach(entry => {
-            if(productColors.value == entry[0]){
+        const productColors = document.querySelector(".color-box");
+        const productSizes = document.querySelector(".size-box");
+        productSizes.innerHTML = "";
+        Object.entries(responseData.pdtColors).forEach(entry => {
+            if(productColors.value == entry[0]) {
                 entry[1].forEach(value => {
-                    productsizes.innerHTML =+ `
-                    <option type="hidden" id="pdtDtlId" value="${value.pdtDtlId}">
-                    <option id="product-size-${value.sizeName}"selected>${value.sizeName}</option>
+                    productSizes.innerHTML += `
+                            <option value="S">${value.sizeName}</option>
                     `;
                 })
                 
             }
-        })
-        this.addColorsSelectEvent(responseData);
+        });
+
+        
+
+        // Object.entries(responseData.pdtColors).foreach(entry => {
+        //     if(productColors.value == entry[0]){
+        //         entry[1].forEach(value => {
+        //             productSizes.innerHTML =+ `
+        //             <option type="hidden" id="pdtDtlId" value="${value.pdtDtlId}">
+        //             <option id="product-size-${value.sizeName}"selected>${value.sizeName}</option>
+        //             `;
+        //         })
+                
+        //     }
+        // })
     }
 }
 
 window.onload = () => {
+
     new ProductDetail();
 }

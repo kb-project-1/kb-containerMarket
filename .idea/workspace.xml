@@ -4,7 +4,84 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="390da182-21c3-4f54-b8ca-cd135bb9c350" name="Changes" comment="관리자 페이지 프론트, 게시글 목록 불러오기" />
+    <list default="true" id="390da182-21c3-4f54-b8ca-cd135bb9c350" name="Changes" comment="관리자 페이지 프론트, 게시글 목록 불러오기">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/src/main/resources/static/js/myshop/order/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/src/main/resources/static/js/myshop/order/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/ContainerMarketApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/aop/LogAop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/aop/ValidationAop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/aop/annotation/LogAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/aop/annotation/ValidAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/exception/CustomInternalServerErrorException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/exception/CustomValidationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/repository/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/repository/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/repository/admin/ProductManagementRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/security/PrincipalDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/MemberServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/PrincipalDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/admin/ProductManagementService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/admin/ProductManagementServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/session/UserInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/service/session/UserInfoServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/advice/AuthFailureHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/advice/RestControllerExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/api/MemberApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/api/ProductApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/api/admin/AdminApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/api/session/UserApi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/MemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/MyShopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/ProductsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/admin/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/validation/ValidationGroups$NotBlankGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/validation/ValidationGroups$PatternCheckGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/validation/ValidationGroups$SizeGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/validation/ValidationGroups.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/controller/validation/ValidationSequence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Member$MemberBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Product$ProductBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/ProductCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/ProductImg$ProductImgBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/ProductImg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Products.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Role$RoleBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/admin/AdminProducts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/admin/ProductDetail$ProductDetailBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/admin/ProductDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/admin/ProductOption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/domain/admin/ProductSize.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/CMRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/JoinReqDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/ProductsRespDto$ProductsRespDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/ProductsRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/AdminProductsRespDto$AdminProductsRespDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/AdminProductsRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/CategoryRespDto$CategoryRespDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/CategoryRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductDtlRegisterDto$ProductDtlRegisterDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductDtlRegisterDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductImgReqDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductOptionRespDto$ProductOptionRespDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductOptionRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductRegisterReqDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductSizeRespDto$ProductSizeRespDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/admin/ProductSizeRespDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/session/UserResponseDto$UserResponseDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/com/kb1/containerMarket/web/dto/session/UserResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/mappers/product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/target/classes/mappers/product.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/static/css/admin/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/target/classes/static/css/admin/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/static/js/admin/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/target/classes/static/js/admin/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/static/js/mainpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/target/classes/static/js/mainpage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_market/target/classes/templates/admin/product_registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/container_market/target/classes/templates/admin/product_registration.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +126,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/ITPS/Documents/kb-containerMarket-희승/container_market"
+    "last_opened_file_path": "C:/Users/idh03/Desktop/git/kb-containerMarket/container_market"
   }
 }]]></component>
   <component name="RecentsManager">

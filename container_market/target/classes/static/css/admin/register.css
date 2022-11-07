@@ -58,11 +58,7 @@ textarea {
 }
 
 .btn2 {
-    width: 300px;
-    background-color: white;
-    border: 1px solid #d7d5d5;
-    color: #2e2e2e;
-    left: 50%;
+    left: 45%;
     transform: translateX(-50%);
 
 }
@@ -72,8 +68,3 @@ textarea {
     border: 1px solid #d7d5d5;
 }
 
-.btn {
-    border: 1px solid #d7d5d5;
-    color: #2e2e2e;
-    width: 50px;
-}

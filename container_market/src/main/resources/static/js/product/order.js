@@ -1,12 +1,12 @@
-class ProductApi {
+class PaymentApi {
     static #instance = null;
     static getInstance() {
         if(this.#instance == null) {
-            this.#instance = new ProductApi();
+            this.#instance = new PaymentApi();
         }
         return this.#instance;
     }
-    getProductData() {
+    getPaymentData() {
         let responseData = null;
         const url = location.href;
         const pdtId = url.substring(url.lastIndexOf("/") + 1);
@@ -14,7 +14,7 @@ class ProductApi {
         $.ajax({
             async: false,
             type: "get",
-            url: "/api/product/" + pdtId,
+            url: "/api/order/" + pdtId,
             dataType: "json",
             success: response => {
                 responseData = response.data;
@@ -25,31 +25,5 @@ class ProductApi {
         });
         console.log(responseData)
         return responseData;
-
     }
-
-}
-
-class ProductDetail{
-    constructor(){
-        const responseData = ProductApi.getInstance().getProductData();
-        this.loadProductDetail(responseData);
-
-
-    }
-
-    loadProductDetail(responseData){
-        document.querySelector(".product-name").textContent = responseData.pdtName;
-        document.querySelector(".p-price").textContent = responseData.pdtPrice;
-    }
-
-    loadProductColors(responseData){
-        
-    }
-
-
-}
-window.onload = () => {
-
-    new ProductDetail();
 }

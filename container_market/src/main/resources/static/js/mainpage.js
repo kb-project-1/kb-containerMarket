@@ -118,9 +118,9 @@ class ProductsService{
         })
         this.addProductListEvent(responseData);
     }
-// 안됨
+
     addProductListEvent(responseData) {
-            const collectionProducts = document.querySelectorAll(".product");
+            const collectionProducts = document.querySelectorAll(".product-list");
 
             collectionProducts.forEach((product, index) => {
                 product.onclick = () => {

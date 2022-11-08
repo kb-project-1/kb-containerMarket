@@ -2,6 +2,7 @@ package com.kb1.containerMarket.web.api;
 
 import com.kb1.containerMarket.security.PrincipalDetails;
 import com.kb1.containerMarket.service.ProductService;
+import com.kb1.containerMarket.web.dto.AddOrderRespDto;
 import com.kb1.containerMarket.web.dto.CMRespDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,10 @@ public class ProductApi {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok(new CMRespDto<>("불러오기 성공",productService.getProductCart(principalDetails.getUsername())));
+    }
+
+    @PostMapping("/product/addOrder")
+    public ResponseEntity<?> addOrder(@RequestBody AddOrderRespDto product) throws Exception {
+        return ResponseEntity.ok(new CMRespDto<>("주문목록 추가 성공",productService.addOrder(product)));
     }
 }

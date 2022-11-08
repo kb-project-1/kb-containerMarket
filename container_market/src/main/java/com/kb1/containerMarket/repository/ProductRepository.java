@@ -1,9 +1,6 @@
 package com.kb1.containerMarket.repository;
 
-import com.kb1.containerMarket.repository.domain.Cart;
-import com.kb1.containerMarket.repository.domain.Product;
-import com.kb1.containerMarket.repository.domain.Products;
-import com.kb1.containerMarket.repository.domain.getCart;
+import com.kb1.containerMarket.repository.domain.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +12,5 @@ public interface ProductRepository {
     public Product getProduct(int pdtId) throws Exception;
     public boolean addProductCart(Cart cart) throws Exception;
     public List<getCart> getProductCart(String username) throws Exception;
+    public boolean addOrder(Order order) throws Exception;
 }

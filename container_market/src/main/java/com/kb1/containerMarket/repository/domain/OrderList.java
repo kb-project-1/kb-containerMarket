@@ -1,9 +1,17 @@
 package com.kb1.containerMarket.repository.domain;
 
 import com.kb1.containerMarket.web.dto.OrderDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderList {
     private LocalDateTime order_date;
     private String image_src;

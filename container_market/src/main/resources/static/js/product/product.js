@@ -25,9 +25,7 @@ class ProductApi {
         });
         console.log(responseData)
         return responseData;
-
     }
-
 }
 
 class ProductDetail{
@@ -111,6 +109,7 @@ class ProductDetail{
 
 function addButtonEvent() {
     const button_cart = document.querySelector(".btn-cart");
+    const button_buy = document.querySelector(".btn-b");
 
     button_cart.onclick = () => {
         const url = location.href;
@@ -129,6 +128,56 @@ function addButtonEvent() {
             }
         });
     }
+
+    button_buy.onclick = () => {
+        init_buyButton();
+    }
+
+}
+
+function init_buyButton() {
+    $.ajax({
+        async: false,
+        type: "get",
+        url: "/api/session/getLogin",
+        dataType: "json",
+        success: (responseSession) => {
+            if(responseSession.data == null){
+                alert("로그인이 필요합니다.");
+                location.href="/member/login";
+            }else{
+                const url = location.href;
+                const pdtId = url.substring(url.lastIndexOf("/") + 1);
+
+                let addOrderRespDto = {
+                    user_id: responseSession.data.username,
+                    pdtId: pdtId,
+                    amount: "1"
+                }
+
+                console.log(pdtId);
+                    $.ajax({
+                        async: false,
+                        type: "post",
+                        url: "/api/product/addOrder",
+                        contentType: "application/json",
+                        data: JSON.stringify(addOrderRespDto),
+                        dataType: "json",
+                        success: (response) => {
+                            alert("결제 목록에 담았습니다.");
+                        },
+                        error: (error) => {
+                            console.log(error);
+                            window.alert("결제 목록 추가에 실패하였습니다.");
+                        }
+                    });
+            }
+        },
+        error: (error) => {
+            console.log(error.responseJSON);
+        }
+    });
+
 
 }
 

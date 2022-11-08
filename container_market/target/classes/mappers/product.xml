@@ -90,4 +90,9 @@
             user_id = #{username}
     </select>
 
+    <insert id="addOrder" parameterType="com.kb1.containerMarket.repository.domain.Order">
+        insert into order_dtl
+        values (0, #{username}, #{productId}, #{count}, #{status}, 1, now())
+    </insert>
+
 </mapper>

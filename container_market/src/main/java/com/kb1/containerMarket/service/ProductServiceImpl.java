@@ -3,6 +3,7 @@ package com.kb1.containerMarket.service;
 import com.kb1.containerMarket.repository.ProductRepository;
 import com.kb1.containerMarket.repository.domain.Cart;
 import com.kb1.containerMarket.repository.domain.Product;
+import com.kb1.containerMarket.web.dto.AddOrderRespDto;
 import com.kb1.containerMarket.web.dto.ProductCartRespDto;
 import com.kb1.containerMarket.web.dto.ProductRespDto;
 import com.kb1.containerMarket.web.dto.ProductsRespDto;
@@ -86,5 +87,10 @@ public class ProductServiceImpl implements ProductService {
             dto.add(entity.toDto());
         });
         return dto;
+    }
+
+    @Override
+    public boolean addOrder(AddOrderRespDto product) throws Exception {
+        return productRepository.addOrder(product.toEntity());
     }
 }

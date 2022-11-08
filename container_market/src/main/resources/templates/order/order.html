@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="ko">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <link rel="stylesheet" href="/static/css/order.css">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +34,7 @@
                         <th>주문자
                             <span class="icon">필수</span>
                         </th>
-                        <td><input class="inputTypeText" type="text"></td>
+                        <td><input class="inputTypeText principal-name" type="text"></td>
                     </tr>
                     <tr>
                         <th>이메일
@@ -103,7 +107,7 @@
                     <tr>
                         <th>휴대전화</th>
                         <td>
-                            <select class="number1">
+                            <select class="phone_number1">
                             <option value="010">010</option>
                             <option value="011">011</option>
                             <option value="016">016</option>
@@ -111,8 +115,8 @@
                             <option value="018">018</option>
                             <option value="019">019</option>
                             </select>-
-                            <input maxlength="4" size="4" type="text" class="number1">-
-                            <input maxlength="4" size="4" type="text" class="number1">
+                            <input maxlength="4" size="4" type="text" class="phone_number2">-
+                            <input maxlength="4" size="4" type="text" class="phone_number3">
                         </td>
 
                     </tr>
@@ -126,9 +130,9 @@
                                 <button type="button" class="btn address-button">주소검색</button>
                             </div>
                             <div class="address-items">
-                                <input type="text" class="inputTypeText" placeholder="기본주소" disabled>
+                                <input type="text" class="inputTypeText address-all" placeholder="기본주소" disabled>
                             </div>
-                            <input type="text" class="inputTypeText" placeholder="나머지 주소">
+                            <input type="text" class="inputTypeText address-detail" placeholder="나머지 주소">
                         </td>
                     </tr>
                 </tbody>
@@ -146,7 +150,7 @@
                         <!-- <li title="옵션"><p class="option">[옵션: 블랙/M]</p></li> -->
                         <!-- <li>수량: 1개</li> -->
                         <li>
-                            <span class="price-s">상품구매금액: 원 </span>
+                            <span class="price-s">상품구매금액:<p class="product-price">3000</p> 원 </span>
                             <!-- <span class="displaynone">()</span> -->
                         </li>
                         <li title="배송">[무료] / 기본배송 </li>
@@ -172,7 +176,7 @@
                 </div>
            </div>
         </div>
-        <button class="btn2">
+        <button class="btn2 payment-button">
             결제하기
         </button>
     </div>

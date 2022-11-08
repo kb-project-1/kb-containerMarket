@@ -27,14 +27,14 @@ function loadList(list) {
     center.innerHTML = "";
 
     list.forEach(data => {
+
         let pDate = data.order_date.replace("T"," ");
         let pPrice = data.price.toLocaleString('en-US');
-        console.log(data);
 
         center.innerHTML += `
             <tr>
                 <td>${pDate}</td>
-                <td><div class="td_img"><img src="/static/upload/product/1732dc2bf68f4c5982e54c4623957bb7.png" style="width: 100px;"></div></td>
+                <td><div class="td_img"><img src="/static/upload/product/${data.image_src}" style="width: 100px;"></div></td>
                 <td>${data.name}</td>
                 <td>${data.count}</td>
                 <td>${pPrice}</td>

@@ -7,7 +7,7 @@
     <select id="getOrderListAll" parameterType="String" resultType="com.kb1.containerMarket.repository.domain.OrderList">
         select
             od.order_date,
-            pim.origin_name as image_src,
+            pim.save_name as image_src,
             pm.pdt_name as name,
             od.count,
             pm.pdt_price as price,

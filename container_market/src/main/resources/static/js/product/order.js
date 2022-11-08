@@ -80,7 +80,39 @@ class AddressApi {
     }
 }
 
+function insertData(){
+    responseData = null;
+
+    $.ajax({
+        async: false,
+        type: "get",
+        url: "/api/session/getLogin",
+        dataType: "json",
+        success: (response) => {
+            if(response.data == null){
+                responseData = response;
+            }else{
+                responseData = response.data;
+            }
+        },
+        error: (error) => {
+            console.log(error.responseJSON);
+        }
+    });
+
+    document.querySelector(".principal-name").value = responseData.username;
+    document.querySelector(".phone_number1").value = responseData.phone.slice(0,3);
+    if(responseData.phone.length < 11) {
+        document.querySelector(".phone_number2").value = responseData.phone.slice(3, 6);
+        document.querySelector(".phone_number3").value = responseData.phone.slice(6, 10);
+    }else{
+        document.querySelector(".phone_number2").value = responseData.phone.slice(3, 7);
+        document.querySelector(".phone_number3").value = responseData.phone.slice(7, 11);
+    }
+}
+
 function init() {
+    insertData();
     AddressApi.getInstance().addAddressButtonEvent();
     new ImportApi();
 }

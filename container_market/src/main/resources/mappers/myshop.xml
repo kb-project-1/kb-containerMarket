@@ -18,6 +18,6 @@
             left outer join order_detail_mst odm on (od.status = odm.id)
             left outer join pdt_image_mst pim on (od.productId = pim.pdt_id)
         where
-            username = #{username}
+            username = #{username} ORDER BY order_date
     </select>
 </mapper>

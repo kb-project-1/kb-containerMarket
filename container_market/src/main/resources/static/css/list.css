@@ -69,21 +69,13 @@ tr {
     word-break: break-all;
     word-wrap: break-word;
 }
-th, td {
-    border: 0;
-    vertical-align: top;
-}
+
 th {
     height: 33.6px;
     display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
-    text-align: -internal-center;
 }
-
-
-
-
 
 p {
     display: block;
@@ -141,6 +133,10 @@ p {
     color: #495164;
 }
 
+tr th:nth-last-child(1){
+    border-right: none;
+}
+
 /* 주문이후css */
 
 .ec-base-table .center {
@@ -153,8 +149,33 @@ p {
     display: none !important;
 }
 
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+tr td{
+    border-left: 1px solid #dfdfdf;
+}
+
+tr td:nth-child(1){
+    border-left:none;
+}
+
+tr td:nth-child(5){
+    padding-right: 5px;
+    text-align: right;
+}
+
+tr td:nth-last-child(1){
+    border-right: none;
+}
+
+.td_img {
+    display: flex;
+    text-align: center;
+
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.td_img img {
+    width: 100%;
+    height: 100%;
 }

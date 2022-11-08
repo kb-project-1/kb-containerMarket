@@ -4,13 +4,13 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.kb1.containerMarket.repository.admin.ProductManagementRepository">
-    <resultMap id="product_category" type="com.kb1.containerMarket.web.domain.ProductCategory">
+    <resultMap id="product_category" type="com.kb1.containerMarket.repository.domain.ProductCategory">
         <result property="category_id" column="id"/>
         <result property="group_id" column="group_id"/>
         <result property="category_name" column="category_name"/>
     </resultMap>
 
-    <update id="updateProductMst" parameterType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+    <update id="updateProductMst" parameterType="com.kb1.containerMarket.repository.domain.admin.ProductMst">
         update
             pdt_mst
         set
@@ -32,7 +32,7 @@
             pdt_category_mst
     </select>
 
-    <insert id="saveProductMst" parameterType="com.kb1.containerMarket.web.domain.Product">
+    <insert id="saveProductMst" parameterType="com.kb1.containerMarket.repository.domain.Product">
         insert into
         pdt_mst
         values(
@@ -47,7 +47,7 @@
         )
     </insert>
 
-    <select id="getProducts" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.AdminProducts">
+    <select id="getProducts" parameterType="int" resultType="com.kb1.containerMarket.repository.domain.admin.AdminProducts">
         select
             pm.id,
             pm.pdt_name,
@@ -63,7 +63,7 @@
         limit #{page}, 10
     </select>
 
-    <select id="getProductOptions" resultType="com.kb1.containerMarket.web.domain.admin.ProductOption">
+    <select id="getProductOptions" resultType="com.kb1.containerMarket.repository.domain.admin.ProductOption">
         select
             pm.id as pdt_id,
             pcm.category_name,
@@ -73,7 +73,7 @@
         left outer join pdt_category_mst pcm on (pm.category_id = pcm.id)
     </select>
 
-    <select id="getProductSize" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductSize">
+    <select id="getProductSize" parameterType="int" resultType="com.kb1.containerMarket.repository.domain.admin.ProductSize">
         select
             psd.id as size_id,
             psm.size_name
@@ -85,7 +85,7 @@
             pm.id = #{productId}
     </select>
 
-    <insert id="saveProductDtl" parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail">
+    <insert id="saveProductDtl" parameterType="com.kb1.containerMarket.repository.domain.admin.ProductDetail">
         insert into
         pdt_dtl
         values(
@@ -115,7 +115,7 @@
         </foreach>
     </insert>
     <select id="findProductColor"
-            parameterType="com.kb1.containerMarket.web.domain.admin.ProductDetail"
+            parameterType="com.kb1.containerMarket.repository.domain.admin.ProductDetail"
             resultType="Integer">
         select
         count(*)
@@ -126,7 +126,7 @@
         and size_id = #{size_id}
         and pdt_color = #{pdt_color}
     </select>
-    <select id="getProductMst" parameterType="int" resultType="com.kb1.containerMarket.web.domain.admin.ProductMst">
+    <select id="getProductMst" parameterType="int" resultType="com.kb1.containerMarket.repository.domain.admin.ProductMst">
         select
             pm.id,
             pm.pdt_name,

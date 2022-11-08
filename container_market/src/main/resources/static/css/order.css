@@ -78,6 +78,7 @@ ul,li{
 th,td{
     border: none;
     font-weight: 400;
+    vertical-align: middle;
 }
 
 .table th{

@@ -5,7 +5,7 @@
 
 <mapper namespace="com.kb1.containerMarket.repository.ProductRepository">
 
-    <resultMap id="getProductDtl" type="com.kb1.containerMarket.web.domain.ProductDetail">
+    <resultMap id="getProductDtl" type="com.kb1.containerMarket.repository.domain.ProductDetail">
         <result property="id" column="pdt_dtl_id"></result>
         <result property="pdt_color" column="pdt_color"></result>
         <result property="size_id" column="size_id"></result>
@@ -13,7 +13,7 @@
         <result property="pdt_stock" column="pdt_stock"></result>
     </resultMap>
 
-    <resultMap id="getProductMst" type="com.kb1.containerMarket.web.domain.Product">
+    <resultMap id="getProductMst" type="com.kb1.containerMarket.repository.domain.Product">
         <result property="id" column="pdt_id"></result>
         <result property="pdt_name" column="pdt_name"></result>
         <result property="pdt_price" column="pdt_price"></result>
@@ -22,7 +22,7 @@
         <result property="save_name" column="save_name"></result>
         <collection property="pdt_dtls" javaType="list" resultMap="getProductDtl"></collection>
     </resultMap>
-    <select id="getProducts" parameterType="hashmap" resultType="com.kb1.containerMarket.web.domain.Products">
+    <select id="getProducts" parameterType="hashmap" resultType="com.kb1.containerMarket.repository.domain.Products">
         select
         pm.id,
         pm.pdt_name,
@@ -69,4 +69,25 @@
         WHERE
             pm.id = ${pdtId}
     </select>
+
+    <insert id="addProductCart" parameterType="com.kb1.containerMarket.repository.domain.Cart">
+        insert into
+            cart values
+                (0, #{user_id}, #{product_id}, #{amount}, now(), now())
+    </insert>
+
+    <select id="getProductCart" parameterType="String" resultType="com.kb1.containerMarket.repository.domain.getCart">
+        select
+            pim.save_name as img,
+            pm.pdt_name as name,
+            cart.amount,
+            pm.pdt_price as price
+        from
+            cart
+            left outer join pdt_mst pm on(cart.product_id = pm.id)
+            left outer join pdt_image_mst pim on(cart.product_id = pim.pdt_id)
+        where
+            user_id = #{username}
+    </select>
+
 </mapper>

@@ -107,11 +107,33 @@ class ProductDetail{
 //             }
 //         });
     }
+}
 
+function addButtonEvent() {
+    const button_cart = document.querySelector(".btn-cart");
+
+    button_cart.onclick = () => {
+        const url = location.href;
+        const pdtId = url.substring(url.lastIndexOf("/") + 1);
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/api/product/addcart/"+pdtId,
+            success: (response) => {
+                console.log(response);
+                window.alert("카트에 추가하였습니다.");
+            },
+            error: (error) => {
+                console.log(error);
+                window.alert("카트 추가에 실패하였습니다.");
+            }
+        });
+    }
 
 }
 
 
 window.addEventListener('load', () => {
         new ProductDetail();
+        new addButtonEvent();
 })

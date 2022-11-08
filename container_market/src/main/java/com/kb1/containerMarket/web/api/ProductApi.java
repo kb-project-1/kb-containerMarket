@@ -1,14 +1,12 @@
 package com.kb1.containerMarket.web.api;
 
+import com.kb1.containerMarket.security.PrincipalDetails;
 import com.kb1.containerMarket.service.ProductService;
 import com.kb1.containerMarket.web.dto.CMRespDto;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -24,5 +22,21 @@ public class ProductApi {
     @GetMapping("/product/{pdtId}")
     public ResponseEntity<?> getProduct(@PathVariable int pdtId) throws Exception {
         return ResponseEntity.ok(new CMRespDto<>("successfully",productService.getProduct(pdtId)));
+    }
+
+    @PostMapping("/product/addcart/{pdtId}")
+    public ResponseEntity<?> addProductCart(@PathVariable int pdtId, @AuthenticationPrincipal PrincipalDetails principalDetails) throws Exception {
+        if(principalDetails == null){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(new CMRespDto<>("successfully",productService.addProductCart(pdtId, principalDetails.getUsername())));
+    }
+
+    @GetMapping("/product/cart")
+    public ResponseEntity<?> getProductCart(@AuthenticationPrincipal PrincipalDetails principalDetails) throws Exception {
+        if(principalDetails == null){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(new CMRespDto<>("불러오기 성공",productService.getProductCart(principalDetails.getUsername())));
     }
 }

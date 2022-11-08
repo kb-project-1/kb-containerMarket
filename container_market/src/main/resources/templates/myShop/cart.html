@@ -18,49 +18,31 @@
       <body>
       <section class="cart">
         <table class="cart__list">
-          <form>
             <thead>
-            <tr>
-              <td></td>
-              <td colspan="2">상품정보</td>
-              <td>옵션</td>
-              <td>상품금액</td>
-              <td>배송비</td>
-            </tr>
+              <tr>
+                <td></td>
+                <td colspan="2">상품정보</td>
+                <td>옵션</td>
+                <td>상품금액</td>
+                <td>배송비</td>
+              </tr>
             </thead>
-            <tbody>
-            <tr class="cart__list__detail">
-              <td><input type="checkbox"></td>
-              <td><img src="/static/upload/product/noimage.png" alt="후드티"></td>
-              <td><a href="#">후드티</a>
-                <p>옵션 : 그레이 / L </p>
-                <span class="price">116,620원</span>
-              </td>
-              <td class="cart__list__option">
-                <p>수량 : 1</p>
-                <button class="cart__list__optionbtn">변경</button>
-              </td>
-              <td><span class="price">116,620원</span><br>
-              </td>
-              <td>무료</td>
-            </tr>
-            <tr class="cart__list__detail">
-              <td style="width: 2%;"><input type="checkbox"></td>
-              <td style="width: 13%;">
-                <img src="/static/upload/product/noimage.png" alt="바지">
-              </td>
-              <td><a href="#">바지</a>
-                <p>옵션 : 그레이 / L </p>
-                <span class="price">88,900원</span>
-              </td>
-              <td class="cart__list__option" style="width: 27%;">
-                <p>수량 : 1</p>
-                <button class="cart__list__optionbtn">변경</button>
-              </td>
-              <td style="width: 15%;"><span class="price">88,900원</span><br>
-              </td>
-              <td style="width: 15%;">무료</td>
-            </tr>
+            <tbody class="cart_tbody">
+              <tr class="cart__list__detail">
+                <td><input type="checkbox"></td>
+                <td><img src="/static/upload/product/noimage.png" alt="후드티"></td>
+                <td><a href="#">후드티</a>
+                  <p>옵션 : 그레이 / L </p>
+                  <span class="price">116,620원</span>
+                </td>
+                <td class="cart__list__option">
+                  <p>수량 : 1</p>
+                  <button class="cart__list__optionbtn">변경</button>
+                </td>
+                <td><span class="price">116,620원</span><br>
+                </td>
+                <td>무료</td>
+              </tr>
             </tbody>
             <tfoot>
             <tr>
@@ -72,7 +54,6 @@
               <td></td>
             </tr>
             </tfoot>
-          </form>
         </table>
         <div class="cart__mainbtns">
           <button class="cart__bigorderbtn left">전체상품주문</button>
@@ -82,5 +63,6 @@
   </main>
   <footer></footer>
 </div>
+<script src="/static/js/myshop/cart.js"></script>
 </body>
 </html>

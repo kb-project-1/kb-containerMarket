@@ -1,7 +1,9 @@
 package com.kb1.containerMarket.service;
 
 import com.kb1.containerMarket.repository.ProductRepository;
+import com.kb1.containerMarket.repository.domain.Cart;
 import com.kb1.containerMarket.repository.domain.Product;
+import com.kb1.containerMarket.web.dto.ProductCartRespDto;
 import com.kb1.containerMarket.web.dto.ProductRespDto;
 import com.kb1.containerMarket.web.dto.ProductsRespDto;
 import lombok.RequiredArgsConstructor;
@@ -65,6 +67,24 @@ public class ProductServiceImpl implements ProductService {
                 .pdtColors(pdtColors)
                 .pdtImg(product.getSave_name())
                 .build();
+        return dto;
+    }
+
+    @Override
+    public boolean addProductCart(int pdtId, String username) throws Exception {
+        return productRepository.addProductCart(Cart.builder()
+                        .product_id(pdtId)
+                        .user_id(username)
+                        .amount(1)
+                        .build());
+    }
+
+    @Override
+    public List<ProductCartRespDto> getProductCart(String username) throws Exception {
+        List<ProductCartRespDto> dto = new ArrayList<ProductCartRespDto>();
+        productRepository.getProductCart(username).forEach(entity -> {
+            dto.add(entity.toDto());
+        });
         return dto;
     }
 }

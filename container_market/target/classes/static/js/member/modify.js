@@ -64,7 +64,7 @@ function initInputs() {
     });
 }
 
-window.addEventListener('load',() => {
+window.addEventListener('load', () => {
     $.ajax({
         async: false,
         type: "get",
